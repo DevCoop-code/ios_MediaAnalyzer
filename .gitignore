@@ -1,0 +1,7 @@
+lib/libavcodec.a
+lib/libavdevice.a
+lib/libavfilter.a
+lib/libavformat.a
+lib/libavutil.a
+lib/libswresample.a
+lib/libswscale.a
