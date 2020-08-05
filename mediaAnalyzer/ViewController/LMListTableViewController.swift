@@ -55,6 +55,17 @@ class LMListTableViewController: UIViewController {
             
         }
         
+        // List of all of files
+        do {
+            let filelist = try fileMangr.contentsOfDirectory(atPath: "/")
+            
+            for filename in filelist {
+                NSLog(filename)
+            }
+        } catch let error as NSError {
+            
+        }
+        
         mediaFileArray = ["bip bop", "big buck bunny", "alticast atlantic girls in the lonely island"]
         
         lmTableView.estimatedRowHeight = 50
