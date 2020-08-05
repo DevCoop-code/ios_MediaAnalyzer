@@ -10,7 +10,7 @@
         <!--Stream-->
         <scene sceneID="zdD-nx-LdL">
             <objects>
-                <viewController id="xdT-Ps-M4i" sceneMemberID="viewController">
+                <viewController id="xdT-Ps-M4i" customClass="SMListTableViewController" customModule="mediaAnalyzer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yLe-EU-MAY">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
         <!--Settings-->
         <scene sceneID="l9L-QG-9Ln">
             <objects>
-                <viewController id="6CD-1P-Azh" sceneMemberID="viewController">
+                <viewController id="6CD-1P-Azh" customClass="SettingViewController" customModule="mediaAnalyzer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pNb-0b-um6">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,17 +67,30 @@
         <!--Local-->
         <scene sceneID="0cR-qH-rF1">
             <objects>
-                <viewController id="Iut-ud-mr8" sceneMemberID="viewController">
+                <viewController id="Iut-ud-mr8" customClass="LMListTableViewController" customModule="mediaAnalyzer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jJd-UP-jP2">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="t0B-2B-TD1" customClass="LMTableViewCell" customModule="mediaAnalyzer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="20" width="984" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LMTableViewCell" rowHeight="91" translatesAutoresizingMaskIntoConstraints="NO" id="t0B-2B-TD1" customClass="LMTableViewCell" customModule="mediaAnalyzer" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="984" height="91"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t0B-2B-TD1" id="fWM-zW-Bqp" customClass="LMTableViewCell" customModule="mediaAnalyzer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="984" height="44"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t0B-2B-TD1" id="fWM-zW-Bqp">
+                                    <rect key="frame" x="0.0" y="0.0" width="984" height="91"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldp-Sg-qrJ" userLabel="LocalMediaFileNameLabel">
+                                            <rect key="frame" x="32" y="35" width="932" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ldp-Sg-qrJ" secondAttribute="trailing" constant="12" id="6y7-78-kZk"/>
+                                        <constraint firstItem="ldp-Sg-qrJ" firstAttribute="centerY" secondItem="fWM-zW-Bqp" secondAttribute="centerY" id="yzt-yf-RaG"/>
+                                        <constraint firstItem="ldp-Sg-qrJ" firstAttribute="leading" secondItem="fWM-zW-Bqp" secondAttribute="leadingMargin" constant="12" id="zx2-on-ttY"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </subviews>

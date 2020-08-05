@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78E083B324DA6A0700A221B2 /* SMListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E083B224DA6A0700A221B2 /* SMListTableViewController.swift */; };
+		78E083B524DA6A2500A221B2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E083B424DA6A2500A221B2 /* SettingViewController.swift */; };
 		78FCEC0624D6418200CE052D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCEC0524D6418200CE052D /* AppDelegate.swift */; };
 		78FCEC0824D6418200CE052D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCEC0724D6418200CE052D /* SceneDelegate.swift */; };
 		78FCEC0A24D6418200CE052D /* VideoFrameAnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCEC0924D6418200CE052D /* VideoFrameAnalyzeViewController.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78E083B224DA6A0700A221B2 /* SMListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMListTableViewController.swift; sourceTree = "<group>"; };
+		78E083B424DA6A2500A221B2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		78FCEC0224D6418200CE052D /* mediaAnalyzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mediaAnalyzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FCEC0524D6418200CE052D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78FCEC0724D6418200CE052D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -248,6 +252,8 @@
 				78FCEC0924D6418200CE052D /* VideoFrameAnalyzeViewController.swift */,
 				78FCEC1924D69BC800CE052D /* DrawVideoViewController.swift */,
 				78FCECD724DA639300CE052D /* LMListTableViewController.swift */,
+				78E083B224DA6A0700A221B2 /* SMListTableViewController.swift */,
+				78E083B424DA6A2500A221B2 /* SettingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -567,7 +573,9 @@
 				78FCEC0A24D6418200CE052D /* VideoFrameAnalyzeViewController.swift in Sources */,
 				78FCEC0624D6418200CE052D /* AppDelegate.swift in Sources */,
 				78FCEC1A24D69BC800CE052D /* DrawVideoViewController.swift in Sources */,
+				78E083B324DA6A0700A221B2 /* SMListTableViewController.swift in Sources */,
 				78FCECBE24D6B27700CE052D /* VideoToolboxDecoder.swift in Sources */,
+				78E083B524DA6A2500A221B2 /* SettingViewController.swift in Sources */,
 				78FCECD624DA634100CE052D /* LMTableViewCell.swift in Sources */,
 				78FCEC0824D6418200CE052D /* SceneDelegate.swift in Sources */,
 				78FCECD824DA639300CE052D /* LMListTableViewController.swift in Sources */,
