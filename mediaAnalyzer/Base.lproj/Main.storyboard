@@ -72,32 +72,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LMTableViewCell" rowHeight="91" translatesAutoresizingMaskIntoConstraints="NO" id="t0B-2B-TD1" customClass="LMTableViewCell" customModule="mediaAnalyzer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="20" width="984" height="91"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t0B-2B-TD1" id="fWM-zW-Bqp">
-                                    <rect key="frame" x="0.0" y="0.0" width="984" height="91"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldp-Sg-qrJ" userLabel="LocalMediaFileNameLabel">
-                                            <rect key="frame" x="32" y="35" width="932" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ldp-Sg-qrJ" secondAttribute="trailing" constant="12" id="6y7-78-kZk"/>
-                                        <constraint firstItem="ldp-Sg-qrJ" firstAttribute="centerY" secondItem="fWM-zW-Bqp" secondAttribute="centerY" id="yzt-yf-RaG"/>
-                                        <constraint firstItem="ldp-Sg-qrJ" firstAttribute="leading" secondItem="fWM-zW-Bqp" secondAttribute="leadingMargin" constant="12" id="zx2-on-ttY"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yug-Yf-BqE">
+                                <rect key="frame" x="20" y="20" width="984" height="683"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LMTableViewCell" rowHeight="91" id="t0B-2B-TD1" customClass="LMTableViewCell" customModule="mediaAnalyzer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="984" height="91"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t0B-2B-TD1" id="fWM-zW-Bqp">
+                                            <rect key="frame" x="0.0" y="0.0" width="984" height="91"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldp-Sg-qrJ" userLabel="LocalMediaFileNameLabel">
+                                                    <rect key="frame" x="27" y="35" width="930" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ldp-Sg-qrJ" secondAttribute="trailing" constant="12" id="6y7-78-kZk"/>
+                                                <constraint firstItem="ldp-Sg-qrJ" firstAttribute="centerY" secondItem="fWM-zW-Bqp" secondAttribute="centerY" id="yzt-yf-RaG"/>
+                                                <constraint firstItem="ldp-Sg-qrJ" firstAttribute="leading" secondItem="fWM-zW-Bqp" secondAttribute="leadingMargin" constant="12" id="zx2-on-ttY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mediaFileNameLabel" destination="ldp-Sg-qrJ" id="ev9-A2-XJe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7Oy-Bm-gWl" firstAttribute="bottom" secondItem="yug-Yf-BqE" secondAttribute="bottom" constant="15" id="4yK-Oe-pnP"/>
+                            <constraint firstItem="yug-Yf-BqE" firstAttribute="leading" secondItem="7Oy-Bm-gWl" secondAttribute="leading" constant="20" id="ALB-Lv-YTx"/>
+                            <constraint firstItem="7Oy-Bm-gWl" firstAttribute="trailing" secondItem="yug-Yf-BqE" secondAttribute="trailing" constant="20" id="xXi-CM-Faw"/>
+                            <constraint firstItem="yug-Yf-BqE" firstAttribute="top" secondItem="7Oy-Bm-gWl" secondAttribute="top" constant="20" id="yQS-ie-7pI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7Oy-Bm-gWl"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Local" id="c9W-tj-sgX"/>
+                    <connections>
+                        <outlet property="lmTableView" destination="yug-Yf-BqE" id="D0c-jf-fqu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDl-sh-Mbr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

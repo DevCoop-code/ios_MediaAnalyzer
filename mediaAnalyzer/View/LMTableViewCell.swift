@@ -9,5 +9,5 @@
 import UIKit
 
 class LMTableViewCell: UITableViewCell {
-    
+    @IBOutlet weak var mediaFileNameLabel: UILabel!
 }
