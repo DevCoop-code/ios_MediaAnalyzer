@@ -34,10 +34,25 @@ class LMListTableViewController: UIViewController {
         NSLog("File Temporary Directory path \(tmpDir) ")
         
         // Change the working directory
-        if fileMangr.changeCurrentDirectoryPath(dirPaths[0].path!) {
+        if fileMangr.changeCurrentDirectoryPath(dirPaths[0].path) {
             // Success to Change working directory
         } else {
             // Fail to change working directory
+        }
+        
+        // Make new Directory
+        let newDir = dirPaths[0].appendingPathComponent("data")
+        do {
+            try fileMangr.createDirectory(at: newDir, withIntermediateDirectories: true, attributes: nil)
+        } catch let error as NSError {
+            
+        }
+        
+        // Remove the Directory
+        do {
+            try fileMangr.removeItem(atPath: newDir.path)
+        } catch let error as NSError {
+            
         }
         
         mediaFileArray = ["bip bop", "big buck bunny", "alticast atlantic girls in the lonely island"]
