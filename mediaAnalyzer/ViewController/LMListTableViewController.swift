@@ -33,6 +33,13 @@ class LMListTableViewController: UIViewController {
         let tmpDir = NSTemporaryDirectory()
         NSLog("File Temporary Directory path \(tmpDir) ")
         
+        // Change the working directory
+        if fileMangr.changeCurrentDirectoryPath(dirPaths[0].path!) {
+            // Success to Change working directory
+        } else {
+            // Fail to change working directory
+        }
+        
         mediaFileArray = ["bip bop", "big buck bunny", "alticast atlantic girls in the lonely island"]
         
         lmTableView.estimatedRowHeight = 50
