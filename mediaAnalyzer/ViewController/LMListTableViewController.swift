@@ -17,6 +17,7 @@ class LMListTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set tableview delegate
         lmTableView.delegate = self
         lmTableView.dataSource = self
 
