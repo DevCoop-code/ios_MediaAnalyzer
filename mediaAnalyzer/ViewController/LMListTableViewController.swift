@@ -30,43 +30,43 @@ class LMListTableViewController: UIViewController {
         NSLog("File Document Directory path \(dirPaths[0].path) ")
         
         // Get tthe temporary directory path
-        let tmpDir = NSTemporaryDirectory()
-        NSLog("File Temporary Directory path \(tmpDir) ")
+//        let tmpDir = NSTemporaryDirectory()
+//        NSLog("File Temporary Directory path \(tmpDir) ")
         
         // Change the working directory
-        if fileMangr.changeCurrentDirectoryPath(dirPaths[0].path) {
+//        if fileMangr.changeCurrentDirectoryPath(dirPaths[0].path) {
             // Success to Change working directory
-        } else {
+//        } else {
             // Fail to change working directory
-        }
+//        }
         
         // Make new Directory
-        let newDir = dirPaths[0].appendingPathComponent("data")
-        do {
-            try fileMangr.createDirectory(at: newDir, withIntermediateDirectories: true, attributes: nil)
-        } catch let error as NSError {
-            
-        }
+//        let newDir = dirPaths[0].appendingPathComponent("data")
+//        do {
+//            try fileMangr.createDirectory(at: newDir, withIntermediateDirectories: true, attributes: nil)
+//        } catch let error as NSError {
+//
+//        }
         
         // Remove the Directory
-        do {
-            try fileMangr.removeItem(atPath: newDir.path)
-        } catch let error as NSError {
-            
-        }
+//        do {
+//            try fileMangr.removeItem(atPath: newDir.path)
+//        } catch let error as NSError {
+//
+//        }
         
         // List of all of files
+        let filelist: [String]
         do {
-            let filelist = try fileMangr.contentsOfDirectory(atPath: "/")
+            filelist = try fileMangr.contentsOfDirectory(atPath: dirPaths[0].path)
             
             for filename in filelist {
                 NSLog(filename)
+                mediaFileArray.append(filename)
             }
         } catch let error as NSError {
             
         }
-        
-        mediaFileArray = ["bip bop", "big buck bunny", "alticast atlantic girls in the lonely island"]
         
         lmTableView.estimatedRowHeight = 50
     }
@@ -91,5 +91,16 @@ extension LMListTableViewController: UITableViewDataSource, UITableViewDelegate 
         cell.mediaFileNameLabel.text = mediaFileArray[row]
         
         return cell
+    }
+    
+    // Add swipe to delete UITableViewCell
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            NSLog("Delete the table view cell")
+        }
     }
 }
