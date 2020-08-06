@@ -61,8 +61,10 @@ class LMListTableViewController: UIViewController {
             filelist = try fileMangr.contentsOfDirectory(atPath: dirPaths[0].path)
             
             for filename in filelist {
-                NSLog(filename)
-                mediaFileArray.append(filename)
+                if filename.hasSuffix(".mp4") || filename.hasSuffix(".ts") {
+                    NSLog(filename)
+                    mediaFileArray.append(filename)
+                }
             }
         } catch let error as NSError {
             
@@ -100,7 +102,9 @@ extension LMListTableViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            NSLog("Delete the table view cell")
+            let row = indexPath.row
+            
+            NSLog("Delete the table view cell : %d", row)
         }
     }
 }
