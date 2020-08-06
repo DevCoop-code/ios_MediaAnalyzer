@@ -13,6 +13,7 @@ class LMListTableViewController: UIViewController {
     @IBOutlet weak var lmTableView: UITableView!
     
     var mediaFileArray = [String]()
+    var fileMangr: FileManager = FileManager.default
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,6 @@ class LMListTableViewController: UIViewController {
         lmTableView.dataSource = self
 
         // Get the local video files
-        var fileMangr = FileManager.default
         NSLog("File Directory path \(fileMangr.currentDirectoryPath) ")
         
         // Get the document directory path
@@ -105,6 +105,19 @@ extension LMListTableViewController: UITableViewDataSource, UITableViewDelegate 
             let row = indexPath.row
             
             NSLog("Delete the table view cell : %d", row)
+            
+            let dirPaths = fileMangr.urls(for: .documentDirectory, in: .userDomainMask)
+            
+//            NSLog("Will Delete %@", mediaFileArray[row])
+            do {
+                let removedItem = dirPaths[0].appendingPathComponent(mediaFileArray[row])
+                try fileMangr.removeItem(atPath: removedItem.path)
+            } catch let error as NSError {
+    
+            }
+            
+            mediaFileArray.remove(at: row)
+            lmTableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 }
