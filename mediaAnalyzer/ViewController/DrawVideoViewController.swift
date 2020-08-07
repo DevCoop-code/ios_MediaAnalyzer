@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DrawVideoViewController: UITableViewController {
+class DrawVideoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
