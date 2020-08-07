@@ -23,11 +23,14 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
     var pipelineState: MTLRenderPipelineState?
     var commandQueue: MTLCommandQueue?
     
-    
+    var mediaPath: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        if mediaPath != nil {
+            NSLog("media which analyzed: \(mediaPath)")
+        }
     }
 
 

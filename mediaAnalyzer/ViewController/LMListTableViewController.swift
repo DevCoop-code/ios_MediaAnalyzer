@@ -72,6 +72,18 @@ class LMListTableViewController: UIViewController {
         
         lmTableView.estimatedRowHeight = 50
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "VideoFrameAnalyze" {
+            let videoFrameAnalyzeController = segue.destination as! VideoFrameAnalyzeViewController
+            
+            let indexPath = self.lmTableView.indexPathForSelectedRow
+            guard let row = indexPath?.row else {
+                return
+            }
+            videoFrameAnalyzeController.mediaPath = mediaFileArray[row]
+        }
+    }
 }
 
 //MARK: Table view delegates
