@@ -19,7 +19,7 @@ typedef struct FFDemuxer {
     AVCodec* codec;
     AVPacket pkt;
 } FFDemuxer;
-FFDemuxer demuxer = {-1, NULL};
+static FFDemuxer demuxer = {-1, NULL};
 
 @interface FFMpegDemuxerWrapper : NSObject
 
