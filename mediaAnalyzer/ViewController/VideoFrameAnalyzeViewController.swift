@@ -28,8 +28,8 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if mediaPath != nil {
-            NSLog("media which analyzed: \(mediaPath)")
+        if let analyzeMedia = mediaPath {
+            NSLog("media which analyzed: \(analyzeMedia)")
         }
     }
 

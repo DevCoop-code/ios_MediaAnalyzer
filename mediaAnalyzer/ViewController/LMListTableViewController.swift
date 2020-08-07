@@ -78,10 +78,9 @@ class LMListTableViewController: UIViewController {
             let videoFrameAnalyzeController = segue.destination as! VideoFrameAnalyzeViewController
             
             let indexPath = self.lmTableView.indexPathForSelectedRow
-            guard let row = indexPath?.row else {
-                return
+            if let row = indexPath?.row {
+                videoFrameAnalyzeController.mediaPath = mediaFileArray[row]
             }
-            videoFrameAnalyzeController.mediaPath = mediaFileArray[row]
         }
     }
 }

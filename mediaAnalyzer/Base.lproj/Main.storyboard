@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IN-C4-x1H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-89" y="668"/>
+            <point key="canvasLocation" x="-307" y="590"/>
         </scene>
         <!--MediaAnalyze-->
         <scene sceneID="gQV-GP-fHk">
@@ -31,11 +31,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cxb-b4-h6i" userLabel="videoPreview">
-                                <rect key="frame" x="20" y="60" width="499" height="286"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uY4-BW-o5o" userLabel="VideoFrameAnalyzeView">
+                                <rect key="frame" x="0.0" y="52" width="376" height="313"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hin-0r-h0Y" userLabel="videoController">
+                                        <rect key="frame" x="8" y="256" width="368" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q97-L2-17H" userLabel="Play">
+                                                <rect key="frame" x="161" y="7" width="34" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <state key="normal" backgroundImage="play.fill" catalog="system">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2t-vR-uRi" userLabel="PlayBackward">
+                                                <rect key="frame" x="89" y="7.6666666666666661" width="38" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <state key="normal" backgroundImage="backward.fill" catalog="system">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHW-Lf-TGN" userLabel="PlayForward">
+                                                <rect key="frame" x="233" y="7.6666666666666661" width="38" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <state key="normal" backgroundImage="forward.fill" catalog="system">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cxb-b4-h6i" userLabel="videoPreview">
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="254"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ei-9S-CkG" userLabel="VideoFrameTable View">
+                                <rect key="frame" x="384" y="52" width="341" height="305"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gDE-EL-lkk" userLabel="VideoFrameCell">
+                                        <rect key="frame" x="0.0" y="28" width="341" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gDE-EL-lkk" id="Elh-qm-nor">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="0k4-cD-FYQ"/>
@@ -47,24 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fc6-ta-3wd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1387.5" y="2495.6521739130435"/>
-        </scene>
-        <!--Local-->
-        <scene sceneID="Bkf-fV-zEJ">
-            <objects>
-                <navigationController id="aeb-cA-81r" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Local" id="Ac2-Zf-3a2"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dBn-iW-nal">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Iut-ud-mr8" kind="relationship" relationship="rootViewController" id="JWI-cc-vYC"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b5v-Vr-mWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1386" y="668"/>
+            <point key="canvasLocation" x="-1079.3478260869565" y="2369.5652173913045"/>
         </scene>
         <!--Local Media List-->
         <scene sceneID="0cR-qH-rF1">
@@ -115,7 +151,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Oy-Bm-gWl"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Local" id="c9W-tj-sgX"/>
                     <navigationItem key="navigationItem" title="Local Media List" id="TCL-FA-y7d"/>
                     <connections>
                         <outlet property="lmTableView" destination="yug-Yf-BqE" id="D0c-jf-fqu"/>
@@ -123,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDl-sh-Mbr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1386.6847826086957" y="1560.8695652173915"/>
+            <point key="canvasLocation" x="-1079" y="1459"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ctJ-AF-yuz">
@@ -135,7 +170,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="aeb-cA-81r" kind="relationship" relationship="viewControllers" id="XfS-CN-j8p"/>
+                        <segue destination="Sql-m3-rGW" kind="relationship" relationship="viewControllers" id="iQo-eF-xHk"/>
                         <segue destination="6CD-1P-Azh" kind="relationship" relationship="viewControllers" id="xPC-hM-f9l"/>
                     </connections>
                 </tabBarController>
@@ -143,5 +178,29 @@
             </objects>
             <point key="canvasLocation" x="-732" y="-347"/>
         </scene>
+        <!--Local-->
+        <scene sceneID="qce-Yo-rmP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sql-m3-rGW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Local" id="c9W-tj-sgX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k1g-u1-qqU">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Iut-ud-mr8" kind="relationship" relationship="rootViewController" id="Z5O-WY-CJW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O4N-mR-hjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1078.5326086956522" y="589.85507246376812"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="backward.fill" catalog="system" width="128" height="79"/>
+        <image name="forward.fill" catalog="system" width="128" height="79"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+    </resources>
 </document>
