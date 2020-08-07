@@ -31,33 +31,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uY4-BW-o5o" userLabel="VideoFrameAnalyzeView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uY4-BW-o5o" userLabel="VideoFrameAnalyzeView">
                                 <rect key="frame" x="0.0" y="52" width="376" height="313"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hin-0r-h0Y" userLabel="videoController">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hin-0r-h0Y" userLabel="videoController">
                                         <rect key="frame" x="8" y="256" width="368" height="51"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q97-L2-17H" userLabel="Play">
-                                                <rect key="frame" x="161" y="7" width="34" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q97-L2-17H" userLabel="Play">
+                                                <rect key="frame" x="161" y="7" width="38" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="GrE-wy-Fes"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="jfy-S7-YCt"/>
+                                                </constraints>
                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <state key="normal" backgroundImage="play.fill" catalog="system">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2t-vR-uRi" userLabel="PlayBackward">
-                                                <rect key="frame" x="89" y="7.6666666666666661" width="38" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2t-vR-uRi" userLabel="PlayBackward">
+                                                <rect key="frame" x="89" y="7.6666666666666643" width="38" height="33"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="BKP-zY-Znf"/>
+                                                    <constraint firstAttribute="width" constant="38" id="JQB-ov-EiW"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="XDH-Sc-sKb"/>
+                                                </constraints>
                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <state key="normal" backgroundImage="backward.fill" catalog="system">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHW-Lf-TGN" userLabel="PlayForward">
-                                                <rect key="frame" x="233" y="7.6666666666666661" width="38" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHW-Lf-TGN" userLabel="PlayForward">
+                                                <rect key="frame" x="233" y="7.6666666666666643" width="38" height="33"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="38" id="Vha-LQ-Xf7"/>
+                                                    <constraint firstAttribute="height" constant="38" id="eVf-eS-YGz"/>
+                                                </constraints>
                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <state key="normal" backgroundImage="forward.fill" catalog="system">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -65,19 +73,42 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="q97-L2-17H" firstAttribute="top" secondItem="Hin-0r-h0Y" secondAttribute="top" constant="5.0000000000000018" id="5q2-Wf-TfP"/>
+                                            <constraint firstItem="o2t-vR-uRi" firstAttribute="baseline" secondItem="aHW-Lf-TGN" secondAttribute="baseline" id="PJT-Hp-lR4"/>
+                                            <constraint firstItem="o2t-vR-uRi" firstAttribute="firstBaseline" secondItem="aHW-Lf-TGN" secondAttribute="firstBaseline" id="Qh6-kY-W53"/>
+                                            <constraint firstItem="q97-L2-17H" firstAttribute="leading" secondItem="o2t-vR-uRi" secondAttribute="trailing" constant="34" id="WoQ-BI-bEm"/>
+                                            <constraint firstItem="o2t-vR-uRi" firstAttribute="bottom" secondItem="aHW-Lf-TGN" secondAttribute="bottom" id="kO9-hr-ozN"/>
+                                            <constraint firstItem="o2t-vR-uRi" firstAttribute="baseline" secondItem="aHW-Lf-TGN" secondAttribute="baseline" id="m3l-OF-ILn"/>
+                                            <constraint firstItem="o2t-vR-uRi" firstAttribute="firstBaseline" secondItem="aHW-Lf-TGN" secondAttribute="firstBaseline" id="o4e-Y1-wKL"/>
+                                            <constraint firstItem="aHW-Lf-TGN" firstAttribute="leading" secondItem="q97-L2-17H" secondAttribute="trailing" constant="34" id="rvF-hS-fLQ"/>
+                                            <constraint firstItem="o2t-vR-uRi" firstAttribute="centerY" secondItem="q97-L2-17H" secondAttribute="centerY" id="tuS-ac-uXZ"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cxb-b4-h6i" userLabel="videoPreview">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxb-b4-h6i" userLabel="videoPreview">
                                         <rect key="frame" x="0.0" y="0.0" width="376" height="254"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Hin-0r-h0Y" secondAttribute="bottom" constant="6" id="0S7-gD-04M"/>
+                                    <constraint firstItem="Hin-0r-h0Y" firstAttribute="top" secondItem="uY4-BW-o5o" secondAttribute="top" constant="256" id="3g8-kg-IEj"/>
+                                    <constraint firstItem="Hin-0r-h0Y" firstAttribute="top" secondItem="Cxb-b4-h6i" secondAttribute="bottom" constant="2" id="75v-Uj-oCa"/>
+                                    <constraint firstItem="q97-L2-17H" firstAttribute="centerX" secondItem="Cxb-b4-h6i" secondAttribute="centerX" id="Bfb-zj-Tkw"/>
+                                    <constraint firstItem="Cxb-b4-h6i" firstAttribute="trailing" secondItem="Hin-0r-h0Y" secondAttribute="trailing" id="K9p-YT-myR"/>
+                                    <constraint firstItem="Hin-0r-h0Y" firstAttribute="leading" secondItem="uY4-BW-o5o" secondAttribute="leadingMargin" id="UZs-Lx-adx"/>
+                                    <constraint firstItem="Cxb-b4-h6i" firstAttribute="centerX" secondItem="uY4-BW-o5o" secondAttribute="centerX" id="WYP-VR-P9f"/>
+                                    <constraint firstItem="Cxb-b4-h6i" firstAttribute="top" secondItem="uY4-BW-o5o" secondAttribute="top" id="ebZ-fO-q2w"/>
+                                    <constraint firstItem="Cxb-b4-h6i" firstAttribute="leading" secondItem="uY4-BW-o5o" secondAttribute="leading" id="fDT-bc-BTp"/>
+                                </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ei-9S-CkG" userLabel="VideoFrameTable View">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ei-9S-CkG" userLabel="VideoFrameTable View">
                                 <rect key="frame" x="384" y="52" width="341" height="305"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="341" id="Q5v-fs-hdJ"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gDE-EL-lkk" userLabel="VideoFrameCell">
                                         <rect key="frame" x="0.0" y="28" width="341" height="43.666667938232422"/>
@@ -91,6 +122,15 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uY4-BW-o5o" firstAttribute="bottom" secondItem="0k4-cD-FYQ" secondAttribute="bottom" id="KYk-ie-2t8"/>
+                            <constraint firstItem="2ei-9S-CkG" firstAttribute="leading" secondItem="uY4-BW-o5o" secondAttribute="trailing" constant="8" id="RjU-aa-xd4"/>
+                            <constraint firstItem="0k4-cD-FYQ" firstAttribute="trailing" secondItem="2ei-9S-CkG" secondAttribute="trailing" constant="11" id="j4G-XG-pw3"/>
+                            <constraint firstItem="uY4-BW-o5o" firstAttribute="top" secondItem="2ei-9S-CkG" secondAttribute="top" id="oYM-XG-0Es"/>
+                            <constraint firstItem="uY4-BW-o5o" firstAttribute="top" secondItem="0k4-cD-FYQ" secondAttribute="top" constant="8" id="pwI-Od-ShP"/>
+                            <constraint firstItem="uY4-BW-o5o" firstAttribute="leading" secondItem="0k4-cD-FYQ" secondAttribute="leading" id="uZi-au-pTk"/>
+                            <constraint firstItem="0k4-cD-FYQ" firstAttribute="bottom" secondItem="2ei-9S-CkG" secondAttribute="bottom" constant="8" id="yxf-VM-hNh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0k4-cD-FYQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="MediaAnalyze" id="Mxs-RG-jsD"/>
