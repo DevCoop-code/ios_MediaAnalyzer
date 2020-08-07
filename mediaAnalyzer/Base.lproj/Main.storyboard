@@ -47,6 +47,9 @@
                                                 <state key="normal" backgroundImage="play.fill" catalog="system">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="playTheContent:" destination="ePc-wu-DmD" eventType="touchUpInside" id="chJ-WN-no0"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2t-vR-uRi" userLabel="PlayBackward">
                                                 <rect key="frame" x="89" y="7.6666666666666643" width="38" height="33"/>
@@ -59,6 +62,9 @@
                                                 <state key="normal" backgroundImage="backward.fill" catalog="system">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="showPreviousVideoFrame:" destination="ePc-wu-DmD" eventType="touchUpInside" id="r09-Zq-Dxo"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHW-Lf-TGN" userLabel="PlayForward">
                                                 <rect key="frame" x="233" y="7.6666666666666643" width="38" height="33"/>
@@ -70,6 +76,9 @@
                                                 <state key="normal" backgroundImage="forward.fill" catalog="system">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="showNextVideoFrame:" destination="ePc-wu-DmD" eventType="touchUpInside" id="VPV-TA-k08"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

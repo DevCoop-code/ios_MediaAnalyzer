@@ -79,7 +79,7 @@ class LMListTableViewController: UIViewController {
             
             let indexPath = self.lmTableView.indexPathForSelectedRow
             if let row = indexPath?.row {
-                videoFrameAnalyzeController.mediaPath = mediaFileArray[row]
+                videoFrameAnalyzeController.mediaPath = fileMangr.urls(for: .documentDirectory, in: .userDomainMask)[0].path + "/" + mediaFileArray[row]
             }
         }
     }

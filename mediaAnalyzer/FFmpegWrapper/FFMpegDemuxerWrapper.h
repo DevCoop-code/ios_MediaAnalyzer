@@ -12,7 +12,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef struct FFDemuxer {
+    int video_stream_index;
+    AVFormatContext* fmt_ctx;
+    AVCodecContext* codec_ctx;
+    AVCodec* codec;
+    AVPacket pkt;
+} FFDemuxer;
+FFDemuxer demuxer = {-1, NULL};
+
 @interface FFMpegDemuxerWrapper : NSObject
+
+- (int)initFFMpegConfigWithPath:(NSString*)url;
 
 @end
 
