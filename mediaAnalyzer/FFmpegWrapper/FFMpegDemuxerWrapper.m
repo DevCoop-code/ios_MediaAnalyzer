@@ -74,7 +74,7 @@
     return err;
 }
 
-- (int) open_decoder:(AVCodecContext*) codec_ctx {
+- (int)open_decoder:(AVCodecContext*) codec_ctx {
     // Find the codec through Codec ID, ffmpeg try to find automatically
     AVCodec* decoder = avcodec_find_decoder(codec_ctx->codec_id);
     
@@ -87,6 +87,16 @@
         return -2;
     }
     return 0;
+}
+
+- (AVCodecParameters*)getCodecParameters {
+    AVCodecParameters* codecpar = avcodec_parameters_alloc();
+    
+    // Fill the parameters struct based on the values from the supplied codec
+    if (avcodec_parameters_from_context(codecpar, demuxer.codec_ctx) < 0) {
+        return NULL;
+    }
+    return codecpar;
 }
 
 @end

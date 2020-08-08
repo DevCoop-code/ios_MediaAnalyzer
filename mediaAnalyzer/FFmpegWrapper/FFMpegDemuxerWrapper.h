@@ -25,6 +25,8 @@ static FFDemuxer demuxer = {-1, NULL};
 
 - (int)initFFMpegConfigWithPath:(NSString*)url;
 
+- (AVCodecParameters*)getCodecParameters;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VideoToolboxDecoder : NSObject
 
+- (instancetype)initWithExtradata;
+
 @end
 
 NS_ASSUME_NONNULL_END
