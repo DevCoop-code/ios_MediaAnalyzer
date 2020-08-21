@@ -65,10 +65,24 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
     }
     
     func runVideoToolboxDecoder() -> Int {
-//        while (true) {
-//            var pixelBufferRef: CVPixelBuffer
-//
-//        }
+       
+        while (true) {
+            let pixelBufferRef: UnsafeMutablePointer<Unmanaged<CVPixelBuffer>?>? = UnsafeMutablePointer<Unmanaged<CVPixelBuffer>?>.allocate(capacity: 1)
+            
+            if let err = videoToolboxDecoder?.decodeVideo(pixelBufferRef) {
+                if (err < 0) {
+                    break;
+                }
+                
+                if (pixelBufferRef?.pointee?.takeRetainedValue()) != nil {
+                    DispatchQueue.main.sync {
+                        // TODO: Frame to Screen
+                    }
+                    // TODO: Release the pixelBuffer
+                }
+            }
+            Thread.sleep(forTimeInterval: 0.025)
+        }
         return 0
     }
     
