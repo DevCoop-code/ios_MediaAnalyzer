@@ -23,11 +23,20 @@ typedef struct FFDemuxer {
 } FFDemuxer;
 static FFDemuxer demuxer = {-1, NULL};
 
+typedef struct NAL_UNIT {
+    uint8_t* nal_buf;
+    int nal_size;
+} NAL_UNIT;
+
 @interface FFMpegDemuxerWrapper : NSObject
 
 - (int)initFFMpegConfigWithPath:(NSString*)url;
 
 - (AVCodecParameters*)getCodecParameters;
+
+- (int) get_video_packet:(NAL_UNIT*) nalu;
+
+- (void) ffmpeg_demuxer_release;
 
 @end
 #endif

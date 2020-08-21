@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface VideoToolboxDecoder : NSObject
 
 - (int)initWithExtradata:(FFMpegDemuxerWrapper*)demuxerWrapper;
+- (int)decodeVideo: (CVPixelBufferRef*)pixelBuffer;
+- (void)releaseVideoToolboxDecoder;
 
 @end
 #endif

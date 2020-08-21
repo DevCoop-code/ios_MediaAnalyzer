@@ -51,6 +51,27 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        DispatchQueue.global().async {
+            self.runVideoToolboxDecoder()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // TODO: Close the Decoder
+    }
+    
+    func runVideoToolboxDecoder() -> Int {
+//        while (true) {
+//            var pixelBufferRef: CVPixelBuffer
+//
+//        }
+        return 0
+    }
+    
     // MARK: button action
     @IBAction func playTheContent(_ sender: Any) {
         NSLog("play")

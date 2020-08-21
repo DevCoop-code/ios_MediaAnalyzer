@@ -99,4 +99,36 @@
     return codecpar;
 }
 
+- (int)get_video_packet:(NAL_UNIT*)nalu {
+    int got_video_frame = 0;
+    while (av_read_frame(demuxer.fmt_ctx, &(demuxer.pkt)) >= 0) {
+        if (demuxer.pkt.stream_index != demuxer.video_stream_index) {
+            continue;
+        }
+        
+        got_video_frame = 1;
+        nalu->nal_size = demuxer.pkt.size;
+        nalu->nal_buf = demuxer.pkt.data;
+        break;
+    }
+    
+    if (!got_video_frame) {
+        return -1;
+    }
+    return 0;
+}
+
+- (void) ffmpeg_demuxer_release {
+    if (demuxer.fmt_ctx) {
+        avformat_close_input(&demuxer.fmt_ctx);
+        demuxer.fmt_ctx = NULL;
+    }
+    
+    if (demuxer.codec_ctx) {
+        avcodec_free_context(&demuxer.codec_ctx);
+    }
+    
+    NSLog(@"FFMpegWrapper is released.");
+}
+
 @end
