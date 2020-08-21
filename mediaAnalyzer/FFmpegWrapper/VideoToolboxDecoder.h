@@ -16,10 +16,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#ifndef VideoToolboxDecoder_IMPORTED
+#define VideoToolboxDecoder_IMPORTED
 @interface VideoToolboxDecoder : NSObject
 
-- (instancetype)initWithExtradata;
+- (int)initWithExtradata:(FFMpegDemuxerWrapper*)demuxerWrapper;
 
 @end
+#endif
 
 NS_ASSUME_NONNULL_END

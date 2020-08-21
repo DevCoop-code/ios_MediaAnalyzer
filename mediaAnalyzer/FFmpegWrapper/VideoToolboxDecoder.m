@@ -14,17 +14,28 @@
     VTDecompressionSessionRef decompressSession;
 }
 
-- (instancetype)initWithExtradata {
-    self = [super init];
-    
-    FFMpegDemuxerWrapper* demuxerWrapper = [[FFMpegDemuxerWrapper alloc]init];
+- (int)initWithExtradata:(FFMpegDemuxerWrapper*)demuxerWrapper {
     
     if (self) {
         codecpar = [demuxerWrapper getCodecParameters];
         [self createVideoToolboxDecoder];
+    } else {
+        return -1;
     }
     
-    return self;
+    return 0;
+}
+
+#pragma mark - callback when frame decompression
+static void didDecompress(void* decompressionOutputRefCon,
+                          void* sourceFrameRefCon,
+                          OSStatus status,
+                          VTDecodeInfoFlags infoFlags,
+                          CVImageBufferRef pixelBuffer,
+                          CMTime presentationTimeStamp,
+                          CMTime presentationDuration) {
+    CVPixelBufferRef* outputPixelBuffer = (CVPixelBufferRef*)sourceFrameRefCon;
+    *outputPixelBuffer = CVPixelBufferRetain(pixelBuffer);
 }
 
 - (int)createVideoToolboxDecoder {
@@ -71,7 +82,7 @@
     dict_set_object(extensions, CFSTR("CVPixelAspectRatio"), (CFTypeRef*)par);
     dict_set_object(extensions, CFSTR("SampleDescriptionExtensionAtoms"), (CFTypeRef*)atoms);
     
-    CMVideoCodecType codecType;
+    CMVideoCodecType codecType = -1;
     switch (codecpar->codec_id) {
         case AV_CODEC_ID_H264:
             codecType = kCMVideoCodecType_H264;
@@ -130,7 +141,26 @@
     dict_set_i32(destinationPixelBufferAttributes, kCVPixelBufferHeightKey, height);
     dict_set_boolean(destinationPixelBufferAttributes, kCVPixelBufferMetalCompatibilityKey, YES);
     
+    /*
+     VTDecompressionOutputCallbackRecord
+     is a simple structure with a pointer to the callback function invoked when frame decompression
+     */
+    VTDecompressionOutputCallbackRecord outputCallback;
+    outputCallback.decompressionOutputCallback = didDecompress;
+    outputCallback.decompressionOutputRefCon = NULL;
+    status = VTDecompressionSessionCreate(kCFAllocatorDefault,
+                                          formatDescription,
+                                          NULL,
+                                          destinationPixelBufferAttributes,
+                                          &outputCallback,
+                                          &(decompressSession));
     
+    if (status != noErr) {
+        NSError* error = [NSError errorWithDomain:NSOSStatusErrorDomain code:status userInfo:nil];
+        NSLog(@"Error: Creating decompression session failed. Description: %@", [error description]);
+        return -1;
+    }
+    return 0;
 }
 
 # pragma mark - Utils

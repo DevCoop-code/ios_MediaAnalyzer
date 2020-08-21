@@ -3,3 +3,4 @@
 //
 
 #include "FFMpegDemuxerWrapper.h"
+#include "VideoToolboxDecoder.h"

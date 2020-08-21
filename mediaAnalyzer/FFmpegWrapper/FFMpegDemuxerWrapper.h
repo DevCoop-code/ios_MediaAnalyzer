@@ -12,6 +12,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#ifndef FFDemuxer_IMPORTED
+#define FFDemuxer_IMPORTED
 typedef struct FFDemuxer {
     int video_stream_index;
     AVFormatContext* fmt_ctx;
@@ -28,5 +30,6 @@ static FFDemuxer demuxer = {-1, NULL};
 - (AVCodecParameters*)getCodecParameters;
 
 @end
+#endif
 
 NS_ASSUME_NONNULL_END

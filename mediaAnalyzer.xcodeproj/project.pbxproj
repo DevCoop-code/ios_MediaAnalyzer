@@ -31,7 +31,6 @@
 		78FCEC0F24D6418900CE052D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78FCEC0E24D6418900CE052D /* Assets.xcassets */; };
 		78FCEC1224D6418900CE052D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FCEC1024D6418900CE052D /* LaunchScreen.storyboard */; };
 		78FCEC1A24D69BC800CE052D /* DrawVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCEC1924D69BC800CE052D /* DrawVideoViewController.swift */; };
-		78FCECBE24D6B27700CE052D /* VideoToolboxDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCECBD24D6B27700CE052D /* VideoToolboxDecoder.swift */; };
 		78FCECC324D6B47600CE052D /* FFMpegDemuxerWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCECC224D6B47600CE052D /* FFMpegDemuxerWrapper.m */; };
 		78FCECD624DA634100CE052D /* LMTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCECD524DA634100CE052D /* LMTableViewCell.swift */; };
 		78FCECD824DA639300CE052D /* LMListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCECD724DA639300CE052D /* LMListTableViewController.swift */; };
@@ -208,7 +207,6 @@
 		78FCECAB24D6A27A00CE052D /* qsv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qsv.h; sourceTree = "<group>"; };
 		78FCECAC24D6A27A00CE052D /* dxva2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dxva2.h; sourceTree = "<group>"; };
 		78FCECAD24D6A27A00CE052D /* jni.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jni.h; sourceTree = "<group>"; };
-		78FCECBD24D6B27700CE052D /* VideoToolboxDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoToolboxDecoder.swift; sourceTree = "<group>"; };
 		78FCECC024D6B47600CE052D /* mediaAnalyzer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mediaAnalyzer-Bridging-Header.h"; sourceTree = "<group>"; };
 		78FCECC124D6B47600CE052D /* FFMpegDemuxerWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMpegDemuxerWrapper.h; sourceTree = "<group>"; };
 		78FCECC224D6B47600CE052D /* FFMpegDemuxerWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMpegDemuxerWrapper.m; sourceTree = "<group>"; };
@@ -283,7 +281,6 @@
 			children = (
 				78FCECD424DA62CC00CE052D /* View */,
 				78FCECBF24D6B43700CE052D /* FFmpegWrapper */,
-				78FCECBC24D6B25200CE052D /* MediaProcess */,
 				78FCEC1B24D69BCF00CE052D /* ViewController */,
 				78FCEC0524D6418200CE052D /* AppDelegate.swift */,
 				78FCEC0724D6418200CE052D /* SceneDelegate.swift */,
@@ -521,14 +518,6 @@
 			path = libswscale;
 			sourceTree = "<group>";
 		};
-		78FCECBC24D6B25200CE052D /* MediaProcess */ = {
-			isa = PBXGroup;
-			children = (
-				78FCECBD24D6B27700CE052D /* VideoToolboxDecoder.swift */,
-			);
-			path = MediaProcess;
-			sourceTree = "<group>";
-		};
 		78FCECBF24D6B43700CE052D /* FFmpegWrapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,7 +616,6 @@
 				78FCEC0624D6418200CE052D /* AppDelegate.swift in Sources */,
 				78FCEC1A24D69BC800CE052D /* DrawVideoViewController.swift in Sources */,
 				78E083B324DA6A0700A221B2 /* SMListTableViewController.swift in Sources */,
-				78FCECBE24D6B27700CE052D /* VideoToolboxDecoder.swift in Sources */,
 				78E083B524DA6A2500A221B2 /* SettingViewController.swift in Sources */,
 				78FCECD624DA634100CE052D /* LMTableViewCell.swift in Sources */,
 				7813F07C24DD4A2F00190587 /* VideoToolboxDecoder.m in Sources */,
