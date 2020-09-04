@@ -24,6 +24,7 @@
 		784EB76E250211F2009C749E /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 784EB76D250211F2009C749E /* Node.m */; };
 		784EB771250213CC009C749E /* BufferProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 784EB770250213CC009C749E /* BufferProvider.m */; };
 		784EB774250229D2009C749E /* MetalTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 784EB773250229D2009C749E /* MetalTexture.m */; };
+		784EB777250309E9009C749E /* SquarePlain.m in Sources */ = {isa = PBXBuildFile; fileRef = 784EB776250309E9009C749E /* SquarePlain.m */; };
 		787437CE2500B56C00C263AF /* Vertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 787437CD2500B56C00C263AF /* Vertex.m */; };
 		78A730AB24EFEEA40051E9B7 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 78A730AA24EFEEA40051E9B7 /* Shaders.metal */; };
 		78D9256024DCF0F0000EA8F7 /* VideoFrameViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D9255F24DCF0F0000EA8F7 /* VideoFrameViewCell.swift */; };
@@ -69,6 +70,8 @@
 		784EB770250213CC009C749E /* BufferProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BufferProvider.m; sourceTree = "<group>"; };
 		784EB772250229D2009C749E /* MetalTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalTexture.h; sourceTree = "<group>"; };
 		784EB773250229D2009C749E /* MetalTexture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MetalTexture.m; sourceTree = "<group>"; };
+		784EB775250309E9009C749E /* SquarePlain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SquarePlain.h; sourceTree = "<group>"; };
+		784EB776250309E9009C749E /* SquarePlain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquarePlain.m; sourceTree = "<group>"; };
 		787437CD2500B56C00C263AF /* Vertex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vertex.m; sourceTree = "<group>"; };
 		787437D02500B58500C263AF /* Vertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
 		78A730AA24EFEEA40051E9B7 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 				784EB770250213CC009C749E /* BufferProvider.m */,
 				784EB772250229D2009C749E /* MetalTexture.h */,
 				784EB773250229D2009C749E /* MetalTexture.m */,
+				784EB775250309E9009C749E /* SquarePlain.h */,
+				784EB776250309E9009C749E /* SquarePlain.m */,
 			);
 			path = CustomViewRendering;
 			sourceTree = "<group>";
@@ -657,6 +662,7 @@
 				784EB76E250211F2009C749E /* Node.m in Sources */,
 				78FCEC1A24D69BC800CE052D /* DrawVideoViewController.swift in Sources */,
 				78E083B324DA6A0700A221B2 /* SMListTableViewController.swift in Sources */,
+				784EB777250309E9009C749E /* SquarePlain.m in Sources */,
 				78E083B524DA6A2500A221B2 /* SettingViewController.swift in Sources */,
 				78FCECD624DA634100CE052D /* LMTableViewCell.swift in Sources */,
 				7813F07C24DD4A2F00190587 /* VideoToolboxDecoder.m in Sources */,
