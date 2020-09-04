@@ -21,6 +21,8 @@
 		7813F07424DD15B500190587 /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F07124DD154400190587 /* libiconv.2.4.0.tbd */; };
 		7813F07624DD15BD00190587 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F07524DD15BD00190587 /* libz.1.1.3.tbd */; };
 		7813F07C24DD4A2F00190587 /* VideoToolboxDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7813F07B24DD4A2F00190587 /* VideoToolboxDecoder.m */; };
+		784EB76E250211F2009C749E /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 784EB76D250211F2009C749E /* Node.m */; };
+		787437CE2500B56C00C263AF /* Vertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 787437CD2500B56C00C263AF /* Vertex.m */; };
 		78A730AB24EFEEA40051E9B7 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 78A730AA24EFEEA40051E9B7 /* Shaders.metal */; };
 		78D9256024DCF0F0000EA8F7 /* VideoFrameViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D9255F24DCF0F0000EA8F7 /* VideoFrameViewCell.swift */; };
 		78E083B324DA6A0700A221B2 /* SMListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E083B224DA6A0700A221B2 /* SMListTableViewController.swift */; };
@@ -59,6 +61,10 @@
 		7813F07524DD15BD00190587 /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 		7813F07A24DD4A2F00190587 /* VideoToolboxDecoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoToolboxDecoder.h; sourceTree = "<group>"; };
 		7813F07B24DD4A2F00190587 /* VideoToolboxDecoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoToolboxDecoder.m; sourceTree = "<group>"; };
+		784EB76C250211F2009C749E /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		784EB76D250211F2009C749E /* Node.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
+		787437CD2500B56C00C263AF /* Vertex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vertex.m; sourceTree = "<group>"; };
+		787437D02500B58500C263AF /* Vertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
 		78A730AA24EFEEA40051E9B7 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		78D9255F24DCF0F0000EA8F7 /* VideoFrameViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFrameViewCell.swift; sourceTree = "<group>"; };
 		78E083B224DA6A0700A221B2 /* SMListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMListTableViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +265,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		787437CC25009DBB00C263AF /* CustomViewRendering */ = {
+			isa = PBXGroup;
+			children = (
+				787437CD2500B56C00C263AF /* Vertex.m */,
+				787437D02500B58500C263AF /* Vertex.h */,
+				784EB76C250211F2009C749E /* Node.h */,
+				784EB76D250211F2009C749E /* Node.m */,
+			);
+			path = CustomViewRendering;
+			sourceTree = "<group>";
+		};
 		78A730A924EFEE4E0051E9B7 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +306,7 @@
 		78FCEC0424D6418200CE052D /* mediaAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
+				787437CC25009DBB00C263AF /* CustomViewRendering */,
 				78A730A924EFEE4E0051E9B7 /* Shaders */,
 				78FCECD424DA62CC00CE052D /* View */,
 				78FCECBF24D6B43700CE052D /* FFmpegWrapper */,
@@ -626,11 +644,13 @@
 				78D9256024DCF0F0000EA8F7 /* VideoFrameViewCell.swift in Sources */,
 				78FCEC0A24D6418200CE052D /* VideoFrameAnalyzeViewController.swift in Sources */,
 				78FCEC0624D6418200CE052D /* AppDelegate.swift in Sources */,
+				784EB76E250211F2009C749E /* Node.m in Sources */,
 				78FCEC1A24D69BC800CE052D /* DrawVideoViewController.swift in Sources */,
 				78E083B324DA6A0700A221B2 /* SMListTableViewController.swift in Sources */,
 				78E083B524DA6A2500A221B2 /* SettingViewController.swift in Sources */,
 				78FCECD624DA634100CE052D /* LMTableViewCell.swift in Sources */,
 				7813F07C24DD4A2F00190587 /* VideoToolboxDecoder.m in Sources */,
+				787437CE2500B56C00C263AF /* Vertex.m in Sources */,
 				78FCEC0824D6418200CE052D /* SceneDelegate.swift in Sources */,
 				78FCECD824DA639300CE052D /* LMListTableViewController.swift in Sources */,
 				78FCECC324D6B47600CE052D /* FFMpegDemuxerWrapper.m in Sources */,
