@@ -35,4 +35,13 @@
     }
     return self;
 }
+
+- (void)dealloc
+{
+    for(int i = 0; i < _inflightBufferCount - 1; i++)
+    {
+        dispatch_semaphore_signal(_availableResourcesSemaphore);
+    }
+}
+
 @end
