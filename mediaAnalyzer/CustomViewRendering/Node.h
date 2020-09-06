@@ -32,8 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) render:(id<MTLCommandQueue>)commandQueue
 renderPipelineState:(id<MTLRenderPipelineState>) pipelineState
        drawable:(id<CAMetalDrawable>)drawable
-    pixelBuffer:(CVPixelBufferRef)pixelBuffer
-     clearColor:(MTLClearColor*)clearColor;
+    pixelBuffer:(CVPixelBufferRef)pixelBuffer;
 
 @end
 

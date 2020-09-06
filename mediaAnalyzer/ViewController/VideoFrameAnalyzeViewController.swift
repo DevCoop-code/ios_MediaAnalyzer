@@ -10,8 +10,6 @@ import UIKit
 import MetalKit
 import Metal
 
-
-
 class VideoFrameAnalyzeViewController: DrawVideoViewController {
 
     // UI Components
@@ -23,6 +21,8 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
     var demuxerWrapper: FFMpegDemuxerWrapper?
     var videoToolboxDecoder: VideoToolboxDecoder?
     
+    var objectToDraw: SquarePlain?
+    
     override func viewDidLoad() {
         
         super.metalVideoPreview = videoPreview
@@ -32,6 +32,11 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
 
         demuxerWrapper = FFMpegDemuxerWrapper()
         videoToolboxDecoder = VideoToolboxDecoder();
+        
+        if let metalDevice = device, let commandQ = commandQueue {
+            objectToDraw = SquarePlain.init(metalDevice, commandQ: commandQ)
+            super.metalViewControllerDelegate = self
+        }
         
         if let analyzeMedia = mediaPath {
             NSLog("media which analyzed: \(analyzeMedia)")
@@ -99,3 +104,17 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
     }
 }
 
+extension VideoFrameAnalyzeViewController: MetalViewControllerDelegate {
+    func updateLogic(timeSinceLasttUpdate: CFTimeInterval) {
+        
+    }
+    
+    func renderObject(drawable: CAMetalDrawable, pixelBuffer: CVPixelBuffer) {
+        if let commandQ = commandQueue, let pipeState = pipelineState {
+            objectToDraw?.render(commandQ,
+                                 renderPipelineState: pipeState,
+                                 drawable: drawable,
+                                 pixelBuffer: pixelBuffer)
+        }
+    }
+}

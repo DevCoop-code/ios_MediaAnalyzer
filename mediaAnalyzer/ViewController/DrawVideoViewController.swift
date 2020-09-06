@@ -107,6 +107,8 @@ class DrawVideoViewController: UIViewController, AVPlayerItemOutputPullDelegate 
                             player.replaceCurrentItem(with: item)
                             videoItem.requestNotificationOfMediaDataChange(withAdvanceInterval: ONE_FRAME_DURATION)
                             player.play()
+                            
+                            self.totalPlayTime = player.currentItem?.duration
                         }
                         break;
                     default:
@@ -160,6 +162,38 @@ class DrawVideoViewController: UIViewController, AVPlayerItemOutputPullDelegate 
     }
     
     @objc func newFrame(displayLink: CADisplayLink) {
+        /*
+        The callback gets called once every Vsync.
+        Using tthe display link's timestamp and duration we can compute the next time the screen will be refreshed, and copy the pixel buffer for that time.
+        This pixel buffer can then be processed and later rendered on screen
+        */
+        var outputItemTime: CMTime = .invalid
         
+        // Calculate the nextVsync time which is when the screen will be refreshed next
+        var nextVSync: CFTimeInterval = (displayLink.timestamp + displayLink.duration)
+        
+        if let output = videoOutput {
+            outputItemTime = output.itemTime(forHostTime: nextVSync)
+            
+            var pixelBuffer: CVPixelBuffer?
+            if output.hasNewPixelBuffer(forItemTime: outputItemTime) {
+                pixelBuffer = output.copyPixelBuffer(forItemTime: outputItemTime, itemTimeForDisplay: nil)
+            }
+            
+            if 0.0 == lastFrameTimestamp {
+                lastFrameTimestamp = displayLink.timestamp
+            }
+            
+            if let lastTimestamp = lastFrameTimestamp {
+                var elapsed: TimeInterval = displayLink.timestamp - lastTimestamp
+                lastFrameTimestamp = displayLink.timestamp
+                
+                // STUDY: autoreleasepool
+                var drawable: CAMetalDrawable? = metalLayer?.nextDrawable()
+                if let pixelBufferData = pixelBuffer, let drawableData = drawable {
+                    metalViewControllerDelegate?.renderObject(drawable: drawableData, pixelBuffer: pixelBufferData)
+                }
+            }
+        }
     }
 }

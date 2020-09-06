@@ -63,7 +63,6 @@
 renderPipelineState:(id<MTLRenderPipelineState>)pipelineState
        drawable:(id<CAMetalDrawable>)drawable
     pixelBuffer:(CVPixelBufferRef)pixelBuffer
-     clearColor:(MTLClearColor *)clearColor
 {
     // Make CPU Wait
     dispatch_semaphore_wait([bufferProvider availableResourcesSemaphore], DISPATCH_TIME_FOREVER);
@@ -82,7 +81,7 @@ renderPipelineState:(id<MTLRenderPipelineState>)pipelineState
      addCompletedHandler: Registers a block of code that Metal calls immediately after the GPU finishes executing the commands in the command buffer
      */
     [commandBuffer addCompletedHandler:^(id<MTLCommandBuffer> _Nonnull commandbuffer) {
-        dispatch_semaphore_signal([bufferProvider availableResourcesSemaphore]);
+        dispatch_semaphore_signal([self->bufferProvider availableResourcesSemaphore]);
     }];
     
     [texture loadVideoTexture:_device commandQ:commandQueue pixelBuffer:pixelBuffer flip:YES];
