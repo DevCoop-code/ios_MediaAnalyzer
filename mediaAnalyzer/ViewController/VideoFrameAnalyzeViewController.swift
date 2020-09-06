@@ -18,17 +18,16 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
     @IBOutlet weak var videoPreview: UIView!
     
     // property
-    var device: MTLDevice?
-    var metalLayer: CAMetalLayer?
-    var pipelineState: MTLRenderPipelineState?
-    var commandQueue: MTLCommandQueue?
-    
     var mediaPath: String?
     
     var demuxerWrapper: FFMpegDemuxerWrapper?
     var videoToolboxDecoder: VideoToolboxDecoder?
     
     override func viewDidLoad() {
+        
+        super.metalVideoPreview = videoPreview
+        super.mediaContentPath = mediaPath
+        
         super.viewDidLoad()
 
         demuxerWrapper = FFMpegDemuxerWrapper()

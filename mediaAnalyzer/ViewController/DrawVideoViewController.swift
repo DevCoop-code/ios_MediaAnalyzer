@@ -10,6 +10,13 @@ import Foundation
 import UIKit
 import MetalKit
 import AVFoundation
+import MobileCoreServices
+
+var ONE_FRAME_DURATION: Double {
+    get {
+        0.03
+    }
+}
 
 protocol MetalViewControllerDelegate {
     func updateLogic(timeSinceLasttUpdate: CFTimeInterval)
@@ -22,10 +29,137 @@ enum mediaType {
     case dash
 }
 
-class DrawVideoViewController: UIViewController {
+//private var playerItemObserverList: [NSKeyValueObservation] = []
+// Key-value observing context
+private var playerItemContext = 0
+
+class DrawVideoViewController: UIViewController, AVPlayerItemOutputPullDelegate {
+    
+    var device: MTLDevice?
+    var metalLayer: CAMetalLayer?
+    var pipelineState: MTLRenderPipelineState?
+    var commandQueue: MTLCommandQueue?
+    var metalVideoPreview: UIView?
+    
+    var metalViewControllerDelegate: MetalViewControllerDelegate?
+    
+    var avPlayer: AVPlayer?
+    var videoOutput: AVPlayerItemVideoOutput?
+    var m_type: mediaType?
+    var currentPlayingTime: CMTime?
+    var totalPlayTime: CMTime?
+    
+    var videoOutputQueue: DispatchQueue?
+    var timer: CADisplayLink?
+    var lastFrameTimestamp: CFTimeInterval?
+    
+    var mediaContentPath: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        initProperties()
+        
+        avPlayer = AVPlayer()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        m_type = .local
+        
+        // STUDY: KVO
+        videoOutput?.addObserver(self,
+                                 forKeyPath: #keyPath(AVPlayerItem.status),
+                                 options: [.old, .new],
+                                 context: &playerItemContext)
+        
+        var mediaURL: NSURL?
+        if let mediaURI = mediaContentPath, let player = avPlayer, let videoItem = videoOutput {
+            NSLog("Media Content URI: %@", mediaURI)
+            player.pause()
+            
+            switch m_type {
+            case .local:
+                mediaURL = NSURL.fileURL(withPath: mediaURI) as NSURL
+                break;
+            case .hls:
+                
+                break
+            case .dash:
+                mediaURL = NSURL.init(fileURLWithPath: mediaURI)
+                break;
+            default:
+                break;
+            }
+            
+            player.currentItem?.remove(videoItem)
+            
+            if let mediaPath = mediaURL {
+                let item = AVPlayerItem.init(url: mediaPath as URL)
+                let asset = item.asset
+                
+                asset.loadValuesAsynchronously(forKeys: ["tracks"]) {
+                    var error: NSError? = nil
+                    let status = asset.statusOfValue(forKey: "tracks", error: &error)
+                    switch status {
+                    case .loaded:
+                        DispatchQueue.main.async {
+                            item.add(videoItem)
+                            player.replaceCurrentItem(with: item)
+                            videoItem.requestNotificationOfMediaDataChange(withAdvanceInterval: ONE_FRAME_DURATION)
+                            player.play()
+                        }
+                        break;
+                    default:
+                        NSLog("player Status is not loaded")
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    func initProperties() {
+        lastFrameTimestamp = 0.0
+        
+        device = MTLCreateSystemDefaultDevice()
+        metalLayer = CAMetalLayer()
+        
+        if let metal_device = device, let metal_layer = metalLayer, let metal_VideoPreview = metalVideoPreview {
+            metal_layer.device = metal_device
+            metal_layer.pixelFormat = .bgra8Unorm
+            metal_layer.framebufferOnly = true
+            metal_layer.frame = metal_VideoPreview.layer.frame
+            metal_VideoPreview.layer.addSublayer(metal_layer)
+            
+            let defaultLibrary = metal_device.makeDefaultLibrary()
+            let vertexProgram = defaultLibrary?.makeFunction(name: "basic_vertex")
+            let fragmentProgram = defaultLibrary?.makeFunction(name: "basic_fragment")
+            
+            let pipelineStateDescriptor = MTLRenderPipelineDescriptor()
+            pipelineStateDescriptor.vertexFunction = vertexProgram
+            pipelineStateDescriptor.fragmentFunction = fragmentProgram
+            pipelineStateDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+            
+            pipelineState = try! metal_device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
+            
+            commandQueue = metal_device.makeCommandQueue()
+        }
+        
+        timer = CADisplayLink.init(target: self, selector: #selector(newFrame))
+        timer?.add(to: .main, forMode: .default)
+        
+        // Setup AVPlayerItemVideoOutput with the required pixelbuffer atttributes
+        var pixelBufferAttributes: NSDictionary = [kCVPixelBufferMetalCompatibilityKey: true,
+                                                   kCVPixelBufferPixelFormatTypeKey: kCVPixelFormatType_420YpCbCr8BiPlanarFullRange]
+        videoOutput = AVPlayerItemVideoOutput.init(pixelBufferAttributes: pixelBufferAttributes as! [String : Any])
+        
+        // STUDY: https://medium.com/@BruceLee_38294/gcd-in-swfit-5-0-866b93d2589
+        // STUDY: GCD
+        videoOutputQueue = DispatchQueue(label: "VideoOutputQueue")
+        videoOutput?.setDelegate(self, queue: videoOutputQueue)
+    }
+    
+    @objc func newFrame(displayLink: CADisplayLink) {
+        
     }
 }
