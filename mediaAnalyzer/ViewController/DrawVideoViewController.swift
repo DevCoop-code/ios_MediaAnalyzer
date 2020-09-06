@@ -8,6 +8,19 @@
 
 import Foundation
 import UIKit
+import MetalKit
+import AVFoundation
+
+protocol MetalViewControllerDelegate {
+    func updateLogic(timeSinceLasttUpdate: CFTimeInterval)
+    func renderObject(drawable: CAMetalDrawable, pixelBuffer:CVPixelBuffer)
+}
+
+enum mediaType {
+    case local
+    case hls
+    case dash
+}
 
 class DrawVideoViewController: UIViewController {
     
