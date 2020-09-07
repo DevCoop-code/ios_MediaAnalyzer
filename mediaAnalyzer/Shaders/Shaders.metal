@@ -23,15 +23,8 @@ struct VertexOut
     float2 texCoord;
 };
 
-struct Uniforms
-{
-    float4x4 modelMatrix;
-    float4x4 projectionMatrix;
-};
-
 vertex VertexOut basic_vertex(
                               const device VertexIn* vertex_array[[buffer(0)]],
-                              const device Uniforms& uniforms[[buffer(1)]],
                               unsigned int vid[[vertex_id]])
 {
     VertexIn VertexIn = vertex_array[vid];
