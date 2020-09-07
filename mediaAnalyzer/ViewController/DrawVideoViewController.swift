@@ -170,7 +170,7 @@ class DrawVideoViewController: UIViewController, AVPlayerItemOutputPullDelegate 
         var outputItemTime: CMTime = .invalid
         
         // Calculate the nextVsync time which is when the screen will be refreshed next
-        var nextVSync: CFTimeInterval = (displayLink.timestamp + displayLink.duration)
+        let nextVSync: CFTimeInterval = (displayLink.timestamp + displayLink.duration)
         
         if let output = videoOutput {
             outputItemTime = output.itemTime(forHostTime: nextVSync)
@@ -189,7 +189,7 @@ class DrawVideoViewController: UIViewController, AVPlayerItemOutputPullDelegate 
                 lastFrameTimestamp = displayLink.timestamp
                 
                 // STUDY: autoreleasepool
-                var drawable: CAMetalDrawable? = metalLayer?.nextDrawable()
+                let drawable: CAMetalDrawable? = metalLayer?.nextDrawable()
                 if let pixelBufferData = pixelBuffer, let drawableData = drawable {
                     metalViewControllerDelegate?.renderObject(drawable: drawableData, pixelBuffer: pixelBufferData)
                 }

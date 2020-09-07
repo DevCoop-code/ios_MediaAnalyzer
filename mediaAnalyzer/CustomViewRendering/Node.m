@@ -38,7 +38,7 @@
         {
             vertexDataArray[index + j] = vertexElement[j];
         }
-        index += 9;
+        index += 8;
     }
     
     NSUInteger dataSize = ([vertices count] * 8) * sizeof(vertexDataArray[0]);
@@ -81,7 +81,7 @@ renderPipelineState:(id<MTLRenderPipelineState>)pipelineState
      addCompletedHandler: Registers a block of code that Metal calls immediately after the GPU finishes executing the commands in the command buffer
      */
     [commandBuffer addCompletedHandler:^(id<MTLCommandBuffer> _Nonnull commandbuffer) {
-        dispatch_semaphore_signal([self->bufferProvider availableResourcesSemaphore]);
+        dispatch_semaphore_signal([bufferProvider availableResourcesSemaphore]);
     }];
     
     [texture loadVideoTexture:_device commandQ:commandQueue pixelBuffer:pixelBuffer flip:YES];
