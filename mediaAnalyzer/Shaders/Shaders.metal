@@ -49,9 +49,7 @@ fragment float4 basic_fragment(
                                                   float4(+1.4020f, -0.7141f, +0.0000f, +0.0000f),
                                                   float4(-0.7010f, +0.5291f, -0.8860f, +1.0000f)
                                                   );
-    float4 ycbcr = float4(ytex2D.sample(sampler2D, interpolated.texCoord).r,
-                          cbcrtex2d.sample(sampler2D, interpolated.texCoord).rg,
-                          1.0);
+    float4 ycbcr = float4(ytex2D.sample(sampler2D, interpolated.texCoord).r, cbcrtex2d.sample(sampler2D, interpolated.texCoord).rg, 1.0);
     
     return ycbcrToRGBTransform * ycbcr;
 }

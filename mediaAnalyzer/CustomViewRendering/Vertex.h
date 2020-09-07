@@ -13,7 +13,7 @@
 #define Vertex_h
 typedef struct VertexStruct
 {
-    Float32 x,y;
+    Float32 x,y,z;
     Float32 r,g,b,a;
     Float32 s,t;
 } VertexStruct;
@@ -22,7 +22,7 @@ typedef struct VertexStruct
 
 @property(nonatomic) VertexStruct vertex;
 
-- (instancetype) init:(Float32)x y:(Float32)y r:(Float32)r g:(Float32)g b:(Float32)b a:(Float32)a s:(Float32)s t:(Float32)t;
+- (instancetype) init:(Float32)x y:(Float32)y z:(Float32)z r:(Float32)r g:(Float32)g b:(Float32)b a:(Float32)a s:(Float32)s t:(Float32)t;
 - (Float32 *)floatBuffer;
 
 @end

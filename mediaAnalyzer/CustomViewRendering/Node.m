@@ -14,7 +14,7 @@
     BufferProvider* bufferProvider;
     MetalTexture* texture;
     
-    Float32 positionX, positionY;
+    Float32 positionX, positionY, positionZ;
     
     id<MTLSamplerState> samplerState;
 }
@@ -27,21 +27,21 @@
     
     samplerState = [self defaultSampler:device];
     
-    Float32* vertexDataArray = malloc(sizeof(Float32) * [vertices count] * 8);
+    Float32* vertexDataArray = malloc(sizeof(Float32) * [vertices count] * 9);
     
     int index = 0;
     for (int i = 0; i < [vertices count]; i++)
     {
         Vertex* vertexData = (Vertex*)[vertices objectAtIndex:i];
         Float32* vertexElement = vertexData.floatBuffer;
-        for (int j = 0; j < 8; j++)
+        for (int j = 0; j < 9; j++)
         {
             vertexDataArray[index + j] = vertexElement[j];
         }
-        index += 8;
+        index += 9;
     }
     
-    NSUInteger dataSize = ([vertices count] * 8) * sizeof(vertexDataArray[0]);
+    NSUInteger dataSize = ([vertices count] * 9) * sizeof(vertexDataArray[0]);
     _vertexBuffer = [device newBufferWithBytes:(vertexDataArray) length:dataSize options:MTLResourceCPUCacheModeWriteCombined];
     
     _name = name;
