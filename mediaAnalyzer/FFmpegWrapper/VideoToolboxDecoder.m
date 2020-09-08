@@ -78,7 +78,7 @@ static void didDecompress(void* decompressionOutputRefCon,
     dict_set_i32(par, CFSTR("VerticalSpacing"), 0);
     
     // SampleDescriptionExtensionAtoms dict
-    dict_set_data(atoms, CFSTR("extraUnit"), (uint8_t*)extradata, extradata_size);
+    dict_set_data(atoms, CFSTR("avcC"), (uint8_t*)extradata, extradata_size);
     
     // Extensions dict
     dict_set_string(extensions, CFSTR("CVImageBufferChromaLocationBottomField"), "left");
