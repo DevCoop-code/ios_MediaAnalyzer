@@ -78,9 +78,15 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
                     break;
                 }
                 
-                if (pixelBufferRef?.pointee?.takeRetainedValue()) != nil {
+                if let pixelBuffer = pixelBufferRef?.pointee?.takeRetainedValue() {
                     DispatchQueue.main.sync {
                         // TODO: Frame to Screen
+                        if let commandQ = commandQueue, let pipeState = pipelineState, let drawable: CAMetalDrawable = metalLayer?.nextDrawable() {
+                            objectToDraw?.render(commandQ,
+                                                 renderPipelineState: pipeState,
+                                                 drawable: drawable,
+                                                 pixelBuffer: pixelBuffer)
+                        }
                     }
                     // TODO: Release the pixelBuffer
                 }
@@ -110,11 +116,11 @@ extension VideoFrameAnalyzeViewController: MetalViewControllerDelegate {
     }
     
     func renderObject(drawable: CAMetalDrawable, pixelBuffer: CVPixelBuffer) {
-        if let commandQ = commandQueue, let pipeState = pipelineState {
-            objectToDraw?.render(commandQ,
-                                 renderPipelineState: pipeState,
-                                 drawable: drawable,
-                                 pixelBuffer: pixelBuffer)
-        }
+//        if let commandQ = commandQueue, let pipeState = pipelineState {
+//            objectToDraw?.render(commandQ,
+//                                 renderPipelineState: pipeState,
+//                                 drawable: drawable,
+//                                 pixelBuffer: pixelBuffer)
+//        }
     }
 }
