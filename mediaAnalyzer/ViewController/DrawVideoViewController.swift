@@ -82,10 +82,10 @@ class DrawVideoViewController: UIViewController, AVPlayerItemOutputPullDelegate 
                 mediaURL = NSURL.fileURL(withPath: mediaURI) as NSURL
                 break;
             case .hls:
-                
+                mediaURL = NSURL(string: mediaURI)
                 break
             case .dash:
-                mediaURL = NSURL.init(fileURLWithPath: mediaURI)
+                // TODO: Will support
                 break;
             default:
                 break;
