@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7813F05824DD13A500190587 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F05124DD13A400190587 /* libavformat.a */; };
-		7813F05924DD13A500190587 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F05224DD13A400190587 /* libswresample.a */; };
-		7813F05A24DD13A500190587 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F05324DD13A500190587 /* libavcodec.a */; };
-		7813F05B24DD13A500190587 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F05424DD13A500190587 /* libavfilter.a */; };
-		7813F05C24DD13A500190587 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F05524DD13A500190587 /* libavutil.a */; };
-		7813F05D24DD13A500190587 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F05624DD13A500190587 /* libavdevice.a */; };
-		7813F05E24DD13A500190587 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F05724DD13A500190587 /* libswscale.a */; };
 		7813F06124DD147E00190587 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F06024DD147E00190587 /* AudioToolbox.framework */; };
 		7813F06E24DD152A00190587 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F06D24DD152900190587 /* CoreMedia.framework */; };
 		7813F07024DD153000190587 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F06F24DD153000190587 /* CoreVideo.framework */; };
@@ -30,6 +23,14 @@
 		78D9256024DCF0F0000EA8F7 /* VideoFrameViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D9255F24DCF0F0000EA8F7 /* VideoFrameViewCell.swift */; };
 		78E083B324DA6A0700A221B2 /* SMListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E083B224DA6A0700A221B2 /* SMListTableViewController.swift */; };
 		78E083B524DA6A2500A221B2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E083B424DA6A2500A221B2 /* SettingViewController.swift */; };
+		78F897CF250795F500ADFFE2 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F06A24DD14CD00190587 /* VideoToolbox.framework */; };
+		78F897DE250799AA00ADFFE2 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F897D7250799AA00ADFFE2 /* libswresample.a */; };
+		78F897DF250799AA00ADFFE2 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F897D8250799AA00ADFFE2 /* libavformat.a */; };
+		78F897E0250799AA00ADFFE2 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F897D9250799AA00ADFFE2 /* libavcodec.a */; };
+		78F897E1250799AA00ADFFE2 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F897DA250799AA00ADFFE2 /* libavdevice.a */; };
+		78F897E2250799AA00ADFFE2 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F897DB250799AA00ADFFE2 /* libavfilter.a */; };
+		78F897E3250799AA00ADFFE2 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F897DC250799AA00ADFFE2 /* libavutil.a */; };
+		78F897E4250799AA00ADFFE2 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F897DD250799AA00ADFFE2 /* libswscale.a */; };
 		78FCEC0624D6418200CE052D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCEC0524D6418200CE052D /* AppDelegate.swift */; };
 		78FCEC0824D6418200CE052D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCEC0724D6418200CE052D /* SceneDelegate.swift */; };
 		78FCEC0A24D6418200CE052D /* VideoFrameAnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCEC0924D6418200CE052D /* VideoFrameAnalyzeViewController.swift */; };
@@ -43,13 +44,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7813F05124DD13A400190587 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavformat.a; sourceTree = "<group>"; };
-		7813F05224DD13A400190587 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
-		7813F05324DD13A500190587 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavcodec.a; sourceTree = "<group>"; };
-		7813F05424DD13A500190587 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavfilter.a; sourceTree = "<group>"; };
-		7813F05524DD13A500190587 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
-		7813F05624DD13A500190587 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavdevice.a; sourceTree = "<group>"; };
-		7813F05724DD13A500190587 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
 		7813F06024DD147E00190587 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7813F06224DD14B000190587 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		7813F06424DD14B500190587 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -78,6 +72,13 @@
 		78D9255F24DCF0F0000EA8F7 /* VideoFrameViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFrameViewCell.swift; sourceTree = "<group>"; };
 		78E083B224DA6A0700A221B2 /* SMListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMListTableViewController.swift; sourceTree = "<group>"; };
 		78E083B424DA6A2500A221B2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		78F897D7250799AA00ADFFE2 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
+		78F897D8250799AA00ADFFE2 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavformat.a; sourceTree = "<group>"; };
+		78F897D9250799AA00ADFFE2 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavcodec.a; sourceTree = "<group>"; };
+		78F897DA250799AA00ADFFE2 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavdevice.a; sourceTree = "<group>"; };
+		78F897DB250799AA00ADFFE2 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavfilter.a; sourceTree = "<group>"; };
+		78F897DC250799AA00ADFFE2 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
+		78F897DD250799AA00ADFFE2 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
 		78FCEC0224D6418200CE052D /* mediaAnalyzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mediaAnalyzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FCEC0524D6418200CE052D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78FCEC0724D6418200CE052D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -236,19 +237,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F897E2250799AA00ADFFE2 /* libavfilter.a in Frameworks */,
+				78F897DE250799AA00ADFFE2 /* libswresample.a in Frameworks */,
 				7813F07624DD15BD00190587 /* libz.1.1.3.tbd in Frameworks */,
 				7813F07424DD15B500190587 /* libiconv.2.4.0.tbd in Frameworks */,
 				7813F07324DD15A300190587 /* libbz2.1.0.tbd in Frameworks */,
 				7813F06E24DD152A00190587 /* CoreMedia.framework in Frameworks */,
-				7813F05C24DD13A500190587 /* libavutil.a in Frameworks */,
-				7813F05E24DD13A500190587 /* libswscale.a in Frameworks */,
 				7813F07024DD153000190587 /* CoreVideo.framework in Frameworks */,
-				7813F05B24DD13A500190587 /* libavfilter.a in Frameworks */,
+				78F897DF250799AA00ADFFE2 /* libavformat.a in Frameworks */,
+				78F897E4250799AA00ADFFE2 /* libswscale.a in Frameworks */,
+				78F897E0250799AA00ADFFE2 /* libavcodec.a in Frameworks */,
+				78F897E1250799AA00ADFFE2 /* libavdevice.a in Frameworks */,
+				78F897E3250799AA00ADFFE2 /* libavutil.a in Frameworks */,
+				78F897CF250795F500ADFFE2 /* VideoToolbox.framework in Frameworks */,
 				7813F06124DD147E00190587 /* AudioToolbox.framework in Frameworks */,
-				7813F05924DD13A500190587 /* libswresample.a in Frameworks */,
-				7813F05824DD13A500190587 /* libavformat.a in Frameworks */,
-				7813F05D24DD13A500190587 /* libavdevice.a in Frameworks */,
-				7813F05A24DD13A500190587 /* libavcodec.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,13 +367,13 @@
 		78FCEC1D24D6A16E00CE052D /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				7813F05324DD13A500190587 /* libavcodec.a */,
-				7813F05624DD13A500190587 /* libavdevice.a */,
-				7813F05424DD13A500190587 /* libavfilter.a */,
-				7813F05124DD13A400190587 /* libavformat.a */,
-				7813F05524DD13A500190587 /* libavutil.a */,
-				7813F05224DD13A400190587 /* libswresample.a */,
-				7813F05724DD13A500190587 /* libswscale.a */,
+				78F897D9250799AA00ADFFE2 /* libavcodec.a */,
+				78F897DA250799AA00ADFFE2 /* libavdevice.a */,
+				78F897DB250799AA00ADFFE2 /* libavfilter.a */,
+				78F897D8250799AA00ADFFE2 /* libavformat.a */,
+				78F897DC250799AA00ADFFE2 /* libavutil.a */,
+				78F897D7250799AA00ADFFE2 /* libswresample.a */,
+				78F897DD250799AA00ADFFE2 /* libswscale.a */,
 			);
 			path = lib;
 			sourceTree = "<group>";
