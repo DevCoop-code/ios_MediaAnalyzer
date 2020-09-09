@@ -106,7 +106,7 @@ class DrawVideoViewController: UIViewController, AVPlayerItemOutputPullDelegate 
                             item.add(videoItem)
                             player.replaceCurrentItem(with: item)
                             videoItem.requestNotificationOfMediaDataChange(withAdvanceInterval: ONE_FRAME_DURATION)
-                            player.play()
+                            player.pause()
                             
                             self.totalPlayTime = player.currentItem?.duration
                         }

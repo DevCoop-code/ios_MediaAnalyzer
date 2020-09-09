@@ -109,9 +109,10 @@
         got_video_frame = 1;
         nalu->nal_size = demuxer.pkt.size;
         nalu->nal_buf = demuxer.pkt.data;
-        for (int i = 0; i < nalu->nal_size; i++) {
-            NSLog(@"not decoded Data : %x", (nalu->nal_buf)[i]);
-        }
+        // Print the Not Decoded Data
+//        for (int i = 0; i < nalu->nal_size; i++) {
+//            NSLog(@"not decoded Data : %x", (nalu->nal_buf)[i]);
+//        }
         break;
     }
     
