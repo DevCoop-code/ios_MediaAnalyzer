@@ -14,6 +14,7 @@
 		7813F07424DD15B500190587 /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F07124DD154400190587 /* libiconv.2.4.0.tbd */; };
 		7813F07624DD15BD00190587 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F07524DD15BD00190587 /* libz.1.1.3.tbd */; };
 		7813F07C24DD4A2F00190587 /* VideoToolboxDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7813F07B24DD4A2F00190587 /* VideoToolboxDecoder.m */; };
+		7849C0DE250C36FF0018F760 /* FFMpegRemuxerWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7849C0DD250C36FF0018F760 /* FFMpegRemuxerWrapper.m */; };
 		784EB76E250211F2009C749E /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 784EB76D250211F2009C749E /* Node.m */; };
 		784EB771250213CC009C749E /* BufferProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 784EB770250213CC009C749E /* BufferProvider.m */; };
 		784EB774250229D2009C749E /* MetalTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 784EB773250229D2009C749E /* MetalTexture.m */; };
@@ -58,6 +59,8 @@
 		7813F07524DD15BD00190587 /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 		7813F07A24DD4A2F00190587 /* VideoToolboxDecoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoToolboxDecoder.h; sourceTree = "<group>"; };
 		7813F07B24DD4A2F00190587 /* VideoToolboxDecoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoToolboxDecoder.m; sourceTree = "<group>"; };
+		7849C0DC250C36FF0018F760 /* FFMpegRemuxerWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMpegRemuxerWrapper.h; sourceTree = "<group>"; };
+		7849C0DD250C36FF0018F760 /* FFMpegRemuxerWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMpegRemuxerWrapper.m; sourceTree = "<group>"; };
 		784EB76C250211F2009C749E /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		784EB76D250211F2009C749E /* Node.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
 		784EB76F250213CC009C749E /* BufferProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BufferProvider.h; sourceTree = "<group>"; };
@@ -572,6 +575,8 @@
 				78FCECC024D6B47600CE052D /* mediaAnalyzer-Bridging-Header.h */,
 				7813F07A24DD4A2F00190587 /* VideoToolboxDecoder.h */,
 				7813F07B24DD4A2F00190587 /* VideoToolboxDecoder.m */,
+				7849C0DC250C36FF0018F760 /* FFMpegRemuxerWrapper.h */,
+				7849C0DD250C36FF0018F760 /* FFMpegRemuxerWrapper.m */,
 			);
 			path = FFmpegWrapper;
 			sourceTree = "<group>";
@@ -670,6 +675,7 @@
 				7813F07C24DD4A2F00190587 /* VideoToolboxDecoder.m in Sources */,
 				784EB771250213CC009C749E /* BufferProvider.m in Sources */,
 				787437CE2500B56C00C263AF /* Vertex.m in Sources */,
+				7849C0DE250C36FF0018F760 /* FFMpegRemuxerWrapper.m in Sources */,
 				78FCEC0824D6418200CE052D /* SceneDelegate.swift in Sources */,
 				784EB774250229D2009C749E /* MetalTexture.m in Sources */,
 				78FCECD824DA639300CE052D /* LMListTableViewController.swift in Sources */,

@@ -79,6 +79,7 @@ static void didDecompress(void* decompressionOutputRefCon,
     
     // SampleDescriptionExtensionAtoms dict
     dict_set_data(atoms, CFSTR("avcC"), (uint8_t*)extradata, extradata_size);
+//    dict_set_data(atoms, CFSTR("annexB"), (uint8_t*)extradata, extradata_size);
     
     // Extensions dict
     dict_set_string(extensions, CFSTR("CVImageBufferChromaLocationBottomField"), "left");
@@ -237,6 +238,12 @@ static void didDecompress(void* decompressionOutputRefCon,
         CFRelease(blockBuffer);
         
         if (status == noErr) {
+//            CVPixelBufferLockBaseAddress(outputPixelBuffer, 0);
+//            void* baseAddress = CVPixelBufferGetBaseAddress(outputPixelBuffer);
+//            int* byteBuffer = (int*)baseAddress;
+//            for (int i = 0; i < 10; i++) {
+//                NSLog(@"pixelBuffer Data: %x", byteBuffer[i]);
+//            }
             *pixelBuffer = outputPixelBuffer;
             return 1;
         } else {

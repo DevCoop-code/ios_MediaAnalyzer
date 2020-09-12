@@ -106,12 +106,39 @@
             continue;
         }
         
+        // Convert mp4 to annexb type
+//        AVBitStreamFilterContext* bsf = av_bitstream_filter_init("h264_mp4toannexb");
+//        AVStream* avStream = demuxer.fmt_ctx->streams[demuxer.video_stream_index];
+//        AVCodecContext* codec_ctx = avStream->codec;
+//        AVPacket new_pkt = (demuxer.pkt);
+//        int ret = av_bitstream_filter_filter(bsf,
+//                                             codec_ctx,
+//                                             NULL,
+//                                             &new_pkt.data,
+//                                             &new_pkt.size,
+//                                             demuxer.pkt.data,
+//                                             demuxer.pkt.size,
+//                                             demuxer.pkt.flags);
+//        if (ret > 0) {
+//            av_free_packet(&demuxer.pkt);
+//            new_pkt.buf = av_buffer_create(new_pkt.data, new_pkt.size, av_buffer_default_free, NULL, 0);
+//        }
+//        demuxer.pkt = new_pkt;
+        
+//        av_packet_rescale_ts(&(demuxer.pkt), avStream->time_base, codec_ctx->time_base);
+        
+        // Convert annexb to avcC, Need Remuxing
+        
+        
         got_video_frame = 1;
         nalu->nal_size = demuxer.pkt.size;
         nalu->nal_buf = demuxer.pkt.data;
-        // Print the Not Decoded Data
+        
+        // Print the Not Decoded (h264, or other codec type) bitstream
+//        NSLog(@"NAL Size : %d, %x", nalu->nal_size, nalu->nal_size);
+//        printf("NOT Decoded Data--> \n");
 //        for (int i = 0; i < nalu->nal_size; i++) {
-//            NSLog(@"not decoded Data : %x", (nalu->nal_buf)[i]);
+//            printf("[%x] ", (nalu->nal_buf)[i]);
 //        }
         break;
     }

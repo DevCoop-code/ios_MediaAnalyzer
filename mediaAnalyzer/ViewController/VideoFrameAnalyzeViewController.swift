@@ -19,6 +19,7 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
     var mediaPath: String?
     
     var demuxerWrapper: FFMpegDemuxerWrapper?
+    var remuxerWrapper: FFMpegRemuxerWrapper?
     var videoToolboxDecoder: VideoToolboxDecoder?
     
     var objectToDraw: SquarePlain?
@@ -31,16 +32,26 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
         super.viewDidLoad()
 
         demuxerWrapper = FFMpegDemuxerWrapper()
-        videoToolboxDecoder = VideoToolboxDecoder();
+        remuxerWrapper = FFMpegRemuxerWrapper()
+        videoToolboxDecoder = VideoToolboxDecoder()
         
         if let metalDevice = device, let commandQ = commandQueue {
             objectToDraw = SquarePlain.init(metalDevice, commandQ: commandQ)
             super.metalViewControllerDelegate = self
         }
-        
-        if let analyzeMedia = mediaPath {
+    
+        if var analyzeMedia = mediaPath {
             NSLog("media which analyzed: \(analyzeMedia)")
             
+            // Start to Remuxing mpegts to mp4
+            if analyzeMedia.hasSuffix(".ts") {
+                guard var tsToMp4File = remuxerWrapper?.convertMpegts(toMp4: analyzeMedia), tsToMp4File != nil else {
+                    return
+                }
+                analyzeMedia = tsToMp4File;
+            }
+            
+            // Start to Demuxing
             guard let result = demuxerWrapper?.initFFMpegConfig(withPath: analyzeMedia), result == 0 else {
                 NSLog("Failed to initialize the ffmpeg")
                 return

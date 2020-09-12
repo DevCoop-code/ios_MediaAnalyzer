@@ -3,5 +3,6 @@
 //
 
 #include "FFMpegDemuxerWrapper.h"
+#include "FFMpegRemuxerWrapper.h"
 #include "VideoToolboxDecoder.h"
 #include "SquarePlain.h"
