@@ -45,7 +45,7 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
             
             // Start to Remuxing mpegts to mp4
             if analyzeMedia.hasSuffix(".ts") {
-                guard var tsToMp4File = remuxerWrapper?.convertMpegts(toMp4: analyzeMedia), tsToMp4File != nil else {
+                guard let tsToMp4File = remuxerWrapper?.convertMpegts(toMp4: analyzeMedia), tsToMp4File != nil else {
                     return
                 }
                 analyzeMedia = tsToMp4File;
