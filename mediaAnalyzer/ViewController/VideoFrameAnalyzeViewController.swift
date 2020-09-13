@@ -106,19 +106,6 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
         }
         return 0
     }
-    
-    // MARK: button action
-    @IBAction func playTheContent(_ sender: Any) {
-        NSLog("play")
-    }
-    
-    @IBAction func showNextVideoFrame(_ sender: Any) {
-        NSLog("next")
-    }
-    
-    @IBAction func showPreviousVideoFrame(_ sender: Any) {
-        NSLog("previous")
-    }
 }
 
 extension VideoFrameAnalyzeViewController: MetalViewControllerDelegate {

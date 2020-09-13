@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jl8-ni-7CE">
-    <device id="retina5_5" orientation="landscape" appearance="light"/>
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,7 +12,7 @@
             <objects>
                 <viewController id="6CD-1P-Azh" customClass="SettingViewController" customModule="mediaAnalyzer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pNb-0b-um6">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="0sb-Uf-f3M"/>
@@ -28,102 +28,37 @@
             <objects>
                 <viewController id="ePc-wu-DmD" customClass="VideoFrameAnalyzeViewController" customModule="mediaAnalyzer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bTn-EU-nK3">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uY4-BW-o5o" userLabel="VideoFrameAnalyzeView">
-                                <rect key="frame" x="0.0" y="52" width="376" height="313"/>
+                                <rect key="frame" x="0.0" y="40" width="310" height="303"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hin-0r-h0Y" userLabel="videoController">
-                                        <rect key="frame" x="8" y="256" width="368" height="51"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q97-L2-17H" userLabel="Play">
-                                                <rect key="frame" x="161" y="7" width="38" height="34"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="38" id="GrE-wy-Fes"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="jfy-S7-YCt"/>
-                                                </constraints>
-                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <state key="normal" backgroundImage="play.fill" catalog="system">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="playTheContent:" destination="ePc-wu-DmD" eventType="touchUpInside" id="chJ-WN-no0"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2t-vR-uRi" userLabel="PlayBackward">
-                                                <rect key="frame" x="89" y="7.6666666666666643" width="38" height="33"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="38" id="BKP-zY-Znf"/>
-                                                    <constraint firstAttribute="width" constant="38" id="JQB-ov-EiW"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="XDH-Sc-sKb"/>
-                                                </constraints>
-                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <state key="normal" backgroundImage="backward.fill" catalog="system">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="showPreviousVideoFrame:" destination="ePc-wu-DmD" eventType="touchUpInside" id="r09-Zq-Dxo"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHW-Lf-TGN" userLabel="PlayForward">
-                                                <rect key="frame" x="233" y="7.6666666666666643" width="38" height="33"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="38" id="Vha-LQ-Xf7"/>
-                                                    <constraint firstAttribute="height" constant="38" id="eVf-eS-YGz"/>
-                                                </constraints>
-                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <state key="normal" backgroundImage="forward.fill" catalog="system">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="showNextVideoFrame:" destination="ePc-wu-DmD" eventType="touchUpInside" id="VPV-TA-k08"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstItem="q97-L2-17H" firstAttribute="top" secondItem="Hin-0r-h0Y" secondAttribute="top" constant="5.0000000000000018" id="5q2-Wf-TfP"/>
-                                            <constraint firstItem="o2t-vR-uRi" firstAttribute="baseline" secondItem="aHW-Lf-TGN" secondAttribute="baseline" id="PJT-Hp-lR4"/>
-                                            <constraint firstItem="o2t-vR-uRi" firstAttribute="firstBaseline" secondItem="aHW-Lf-TGN" secondAttribute="firstBaseline" id="Qh6-kY-W53"/>
-                                            <constraint firstItem="q97-L2-17H" firstAttribute="leading" secondItem="o2t-vR-uRi" secondAttribute="trailing" constant="34" id="WoQ-BI-bEm"/>
-                                            <constraint firstItem="o2t-vR-uRi" firstAttribute="bottom" secondItem="aHW-Lf-TGN" secondAttribute="bottom" id="kO9-hr-ozN"/>
-                                            <constraint firstItem="o2t-vR-uRi" firstAttribute="baseline" secondItem="aHW-Lf-TGN" secondAttribute="baseline" id="m3l-OF-ILn"/>
-                                            <constraint firstItem="o2t-vR-uRi" firstAttribute="firstBaseline" secondItem="aHW-Lf-TGN" secondAttribute="firstBaseline" id="o4e-Y1-wKL"/>
-                                            <constraint firstItem="aHW-Lf-TGN" firstAttribute="leading" secondItem="q97-L2-17H" secondAttribute="trailing" constant="34" id="rvF-hS-fLQ"/>
-                                            <constraint firstItem="o2t-vR-uRi" firstAttribute="centerY" secondItem="q97-L2-17H" secondAttribute="centerY" id="tuS-ac-uXZ"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxb-b4-h6i" userLabel="videoPreview">
-                                        <rect key="frame" x="0.0" y="0.0" width="376" height="254"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="295"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Hin-0r-h0Y" secondAttribute="bottom" constant="6" id="0S7-gD-04M"/>
-                                    <constraint firstItem="Hin-0r-h0Y" firstAttribute="top" secondItem="uY4-BW-o5o" secondAttribute="top" constant="256" id="3g8-kg-IEj"/>
-                                    <constraint firstItem="Hin-0r-h0Y" firstAttribute="top" secondItem="Cxb-b4-h6i" secondAttribute="bottom" constant="2" id="75v-Uj-oCa"/>
-                                    <constraint firstItem="q97-L2-17H" firstAttribute="centerX" secondItem="Cxb-b4-h6i" secondAttribute="centerX" id="Bfb-zj-Tkw"/>
-                                    <constraint firstItem="Cxb-b4-h6i" firstAttribute="trailing" secondItem="Hin-0r-h0Y" secondAttribute="trailing" id="K9p-YT-myR"/>
-                                    <constraint firstItem="Hin-0r-h0Y" firstAttribute="leading" secondItem="uY4-BW-o5o" secondAttribute="leadingMargin" id="UZs-Lx-adx"/>
+                                    <constraint firstItem="Cxb-b4-h6i" firstAttribute="bottom" secondItem="uY4-BW-o5o" secondAttribute="bottomMargin" id="OVd-XY-JsB"/>
                                     <constraint firstItem="Cxb-b4-h6i" firstAttribute="centerX" secondItem="uY4-BW-o5o" secondAttribute="centerX" id="WYP-VR-P9f"/>
                                     <constraint firstItem="Cxb-b4-h6i" firstAttribute="top" secondItem="uY4-BW-o5o" secondAttribute="top" id="ebZ-fO-q2w"/>
                                     <constraint firstItem="Cxb-b4-h6i" firstAttribute="leading" secondItem="uY4-BW-o5o" secondAttribute="leading" id="fDT-bc-BTp"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ei-9S-CkG" userLabel="VideoFrameTable View">
-                                <rect key="frame" x="384" y="52" width="341" height="305"/>
+                                <rect key="frame" x="318" y="40" width="341" height="295"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="341" id="Q5v-fs-hdJ"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gDE-EL-lkk" userLabel="VideoFrameCell">
-                                        <rect key="frame" x="0.0" y="28" width="341" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="28" width="341" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gDE-EL-lkk" id="Elh-qm-nor">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -132,10 +67,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="0k4-cD-FYQ" firstAttribute="trailing" secondItem="2ei-9S-CkG" secondAttribute="trailing" constant="8" id="2oD-hM-Qc3"/>
                             <constraint firstItem="uY4-BW-o5o" firstAttribute="bottom" secondItem="0k4-cD-FYQ" secondAttribute="bottom" id="KYk-ie-2t8"/>
+                            <constraint firstItem="2ei-9S-CkG" firstAttribute="leading" secondItem="uY4-BW-o5o" secondAttribute="trailing" constant="8" id="Qfv-7h-ONY"/>
                             <constraint firstItem="2ei-9S-CkG" firstAttribute="leading" secondItem="uY4-BW-o5o" secondAttribute="trailing" constant="8" id="RjU-aa-xd4"/>
-                            <constraint firstItem="0k4-cD-FYQ" firstAttribute="trailing" secondItem="2ei-9S-CkG" secondAttribute="trailing" constant="11" id="j4G-XG-pw3"/>
                             <constraint firstItem="uY4-BW-o5o" firstAttribute="top" secondItem="2ei-9S-CkG" secondAttribute="top" id="oYM-XG-0Es"/>
+                            <constraint firstItem="2ei-9S-CkG" firstAttribute="leading" secondItem="uY4-BW-o5o" secondAttribute="trailing" constant="8" id="oZP-3i-uur"/>
                             <constraint firstItem="uY4-BW-o5o" firstAttribute="top" secondItem="0k4-cD-FYQ" secondAttribute="top" constant="8" id="pwI-Od-ShP"/>
                             <constraint firstItem="uY4-BW-o5o" firstAttribute="leading" secondItem="0k4-cD-FYQ" secondAttribute="leading" id="uZi-au-pTk"/>
                             <constraint firstItem="0k4-cD-FYQ" firstAttribute="bottom" secondItem="2ei-9S-CkG" secondAttribute="bottom" constant="8" id="yxf-VM-hNh"/>
@@ -156,22 +93,22 @@
             <objects>
                 <viewController id="Iut-ud-mr8" customClass="LMListTableViewController" customModule="mediaAnalyzer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jJd-UP-jP2">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yug-Yf-BqE">
-                                <rect key="frame" x="20" y="64" width="696" height="286"/>
+                                <rect key="frame" x="20" y="52" width="627" height="276"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LMTableViewCell" rowHeight="91" id="t0B-2B-TD1" customClass="LMTableViewCell" customModule="mediaAnalyzer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="696" height="91"/>
+                                        <rect key="frame" x="0.0" y="28" width="627" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t0B-2B-TD1" id="fWM-zW-Bqp">
-                                            <rect key="frame" x="0.0" y="0.0" width="696" height="91"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="627" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldp-Sg-qrJ" userLabel="LocalMediaFileNameLabel">
-                                                    <rect key="frame" x="32" y="35" width="632" height="21"/>
+                                                    <rect key="frame" x="27" y="35" width="573" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -234,7 +171,7 @@
                     <tabBarItem key="tabBarItem" title="Local" id="c9W-tj-sgX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k1g-u1-qqU">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -247,9 +184,4 @@
             <point key="canvasLocation" x="-1078.5326086956522" y="589.85507246376812"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="backward.fill" catalog="system" width="128" height="79"/>
-        <image name="forward.fill" catalog="system" width="128" height="79"/>
-        <image name="play.fill" catalog="system" width="116" height="128"/>
-    </resources>
 </document>
