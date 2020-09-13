@@ -101,6 +101,7 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
                     }
                     // TODO: Release the pixelBuffer
                 }
+                pixelBufferRef?.deallocate()
             }
             Thread.sleep(forTimeInterval: 0.025)
         }
