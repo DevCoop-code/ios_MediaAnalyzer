@@ -40,6 +40,8 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
             super.metalViewControllerDelegate = self
         }
     
+        videoToolboxDecoder?.delegate = self
+        
         if var analyzeMedia = mediaPath {
             NSLog("media which analyzed: \(analyzeMedia)")
             
@@ -121,5 +123,12 @@ extension VideoFrameAnalyzeViewController: MetalViewControllerDelegate {
 //                                 drawable: drawable,
 //                                 pixelBuffer: pixelBuffer)
 //        }
+    }
+}
+
+extension VideoFrameAnalyzeViewController: NALUnitDelegate {
+    func nalUnitInfo(_ nal_buf_data: UnsafeMutablePointer<UInt8>, nalUnitSize nal_buf_size: Int32) {
+//        let vFrameData: UnsafeMutablePointer<UInt64> = UnsafeMutablePointer<UInt64>.allocate(capacity: Int(nal_buf_size));
+        NSLog("nal buf size %d", Int(nal_buf_size))
     }
 }

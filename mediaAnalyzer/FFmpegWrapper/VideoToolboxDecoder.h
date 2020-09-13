@@ -18,7 +18,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 #ifndef VideoToolboxDecoder_IMPORTED
 #define VideoToolboxDecoder_IMPORTED
+@protocol NALUnitDelegate <NSObject>
+
+- (void)nalUnitInfo:(uint8_t*)nal_buf_data nalUnitSize:(int)nal_buf_size;
+
+@end
+
 @interface VideoToolboxDecoder : NSObject
+
+@property(nonatomic) id<NALUnitDelegate> delegate;
 
 - (int)initWithExtradata:(FFMpegDemuxerWrapper*)demuxerWrapper;
 - (int)decodeVideo: (CVPixelBufferRef*)pixelBuffer;
