@@ -38,6 +38,8 @@ typedef struct NAL_UNIT {
 
 - (void) ffmpeg_demuxer_release;
 
++ (FFDemuxer) getFFDemuxer;
+
 @end
 #endif
 

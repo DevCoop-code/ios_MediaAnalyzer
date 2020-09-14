@@ -129,6 +129,7 @@ extension VideoFrameAnalyzeViewController: MetalViewControllerDelegate {
 extension VideoFrameAnalyzeViewController: NALUnitDelegate {
     func nalUnitInfo(_ nal_buf_data: UnsafeMutablePointer<UInt8>, nalUnitSize nal_buf_size: Int32) {
 //        let vFrameData: UnsafeMutablePointer<UInt64> = UnsafeMutablePointer<UInt64>.allocate(capacity: Int(nal_buf_size));
+        FFMpegUtil.convertMp4(toAnnexB: nal_buf_data)
         NSLog("nal buf size %d", Int(nal_buf_size))
     }
 }

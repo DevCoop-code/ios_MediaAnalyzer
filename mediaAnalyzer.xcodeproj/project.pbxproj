@@ -20,6 +20,7 @@
 		784EB774250229D2009C749E /* MetalTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 784EB773250229D2009C749E /* MetalTexture.m */; };
 		784EB777250309E9009C749E /* SquarePlain.m in Sources */ = {isa = PBXBuildFile; fileRef = 784EB776250309E9009C749E /* SquarePlain.m */; };
 		787437CE2500B56C00C263AF /* Vertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 787437CD2500B56C00C263AF /* Vertex.m */; };
+		78783EF5250E7F37002C574E /* FFMpegUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78783EF4250E7F37002C574E /* FFMpegUtil.m */; };
 		78A730AB24EFEEA40051E9B7 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 78A730AA24EFEEA40051E9B7 /* Shaders.metal */; };
 		78D9256024DCF0F0000EA8F7 /* VideoFrameViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D9255F24DCF0F0000EA8F7 /* VideoFrameViewCell.swift */; };
 		78E083B324DA6A0700A221B2 /* SMListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E083B224DA6A0700A221B2 /* SMListTableViewController.swift */; };
@@ -71,6 +72,8 @@
 		784EB776250309E9009C749E /* SquarePlain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquarePlain.m; sourceTree = "<group>"; };
 		787437CD2500B56C00C263AF /* Vertex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vertex.m; sourceTree = "<group>"; };
 		787437D02500B58500C263AF /* Vertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
+		78783EF3250E7F37002C574E /* FFMpegUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMpegUtil.h; sourceTree = "<group>"; };
+		78783EF4250E7F37002C574E /* FFMpegUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMpegUtil.m; sourceTree = "<group>"; };
 		78A730AA24EFEEA40051E9B7 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		78D9255F24DCF0F0000EA8F7 /* VideoFrameViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFrameViewCell.swift; sourceTree = "<group>"; };
 		78E083B224DA6A0700A221B2 /* SMListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMListTableViewController.swift; sourceTree = "<group>"; };
@@ -577,6 +580,8 @@
 				7813F07B24DD4A2F00190587 /* VideoToolboxDecoder.m */,
 				7849C0DC250C36FF0018F760 /* FFMpegRemuxerWrapper.h */,
 				7849C0DD250C36FF0018F760 /* FFMpegRemuxerWrapper.m */,
+				78783EF3250E7F37002C574E /* FFMpegUtil.h */,
+				78783EF4250E7F37002C574E /* FFMpegUtil.m */,
 			);
 			path = FFmpegWrapper;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				787437CE2500B56C00C263AF /* Vertex.m in Sources */,
 				7849C0DE250C36FF0018F760 /* FFMpegRemuxerWrapper.m in Sources */,
 				78FCEC0824D6418200CE052D /* SceneDelegate.swift in Sources */,
+				78783EF5250E7F37002C574E /* FFMpegUtil.m in Sources */,
 				784EB774250229D2009C749E /* MetalTexture.m in Sources */,
 				78FCECD824DA639300CE052D /* LMListTableViewController.swift in Sources */,
 				78FCECC324D6B47600CE052D /* FFMpegDemuxerWrapper.m in Sources */,

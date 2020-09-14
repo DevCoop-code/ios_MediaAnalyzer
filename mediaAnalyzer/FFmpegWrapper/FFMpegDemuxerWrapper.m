@@ -162,4 +162,8 @@
     NSLog(@"FFMpegWrapper is released.");
 }
 
++ (FFDemuxer) getFFDemuxer {
+    return demuxer;
+}
+
 @end

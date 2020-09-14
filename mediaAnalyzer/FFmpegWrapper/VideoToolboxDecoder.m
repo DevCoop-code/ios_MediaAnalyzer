@@ -181,6 +181,7 @@ static void didDecompress(void* decompressionOutputRefCon,
         }
         
         [_delegate nalUnitInfo:nal_unit.nal_buf nalUnitSize:nal_unit.nal_size];
+        
         CVPixelBufferRef outputPixelBuffer = NULL;
         CMBlockBufferRef blockBuffer = NULL;
         OSStatus status = CMBlockBufferCreateWithMemoryBlock(kCFAllocatorDefault,
