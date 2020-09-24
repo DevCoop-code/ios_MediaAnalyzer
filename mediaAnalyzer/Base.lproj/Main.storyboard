@@ -54,13 +54,30 @@
                                     <constraint firstAttribute="width" constant="341" id="Q5v-fs-hdJ"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gDE-EL-lkk" userLabel="VideoFrameCell">
-                                        <rect key="frame" x="0.0" y="28" width="341" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gDE-EL-lkk" userLabel="VideoFrameCell" customClass="VFTableViewCell" customModule="mediaAnalyzer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="341" height="44.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gDE-EL-lkk" id="Elh-qm-nor">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGS-3u-0rd">
+                                                    <rect key="frame" x="27" y="11.5" width="311" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="rGS-3u-0rd" secondAttribute="bottom" constant="0.5" id="PHA-0W-uQX"/>
+                                                <constraint firstItem="rGS-3u-0rd" firstAttribute="trailing" secondItem="Elh-qm-nor" secondAttribute="trailingMargin" constant="12" id="RhY-2r-UgA"/>
+                                                <constraint firstItem="rGS-3u-0rd" firstAttribute="top" secondItem="Elh-qm-nor" secondAttribute="topMargin" constant="0.5" id="mLE-NO-w6S"/>
+                                                <constraint firstItem="rGS-3u-0rd" firstAttribute="leading" secondItem="Elh-qm-nor" secondAttribute="leadingMargin" constant="12" id="p1I-Qr-kAi"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mediaFrameType" destination="rGS-3u-0rd" id="ECT-EV-Qk0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -86,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fc6-ta-3wd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1079.3478260869565" y="2369.5652173913045"/>
+            <point key="canvasLocation" x="-1079.9100449775112" y="2368.8000000000002"/>
         </scene>
         <!--Local Media List-->
         <scene sceneID="0cR-qH-rF1">
