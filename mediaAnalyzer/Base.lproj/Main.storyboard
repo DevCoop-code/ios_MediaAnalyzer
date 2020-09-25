@@ -54,15 +54,15 @@
                                     <constraint firstAttribute="width" constant="341" id="Q5v-fs-hdJ"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gDE-EL-lkk" userLabel="VideoFrameCell" customClass="VFTableViewCell" customModule="mediaAnalyzer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="341" height="44.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VFTableViewCell" id="gDE-EL-lkk" userLabel="VideoFrameCell" customClass="VFTableViewCell" customModule="mediaAnalyzer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="341" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gDE-EL-lkk" id="Elh-qm-nor">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="44.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGS-3u-0rd">
-                                                    <rect key="frame" x="27" y="11.5" width="311" height="21.5"/>
+                                                    <rect key="frame" x="27" y="11.5" width="311" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -98,6 +98,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="MediaAnalyze" id="Mxs-RG-jsD"/>
                     <connections>
+                        <outlet property="vfTableView" destination="2ei-9S-CkG" id="HC0-7N-UL6"/>
                         <outlet property="videoPreview" destination="Cxb-b4-h6i" id="Myl-UC-O9V"/>
                     </connections>
                 </viewController>

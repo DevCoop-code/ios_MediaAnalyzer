@@ -14,6 +14,7 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
 
     // UI Components
     @IBOutlet weak var videoPreview: UIView!
+    @IBOutlet weak var vfTableView: UITableView!
     
     // property
     var mediaPath: String?
@@ -23,6 +24,8 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
     var videoToolboxDecoder: VideoToolboxDecoder?
     
     var objectToDraw: SquarePlain?
+    
+    var videoFrameDataArray = [String]()
     
     override func viewDidLoad() {
         
@@ -129,7 +132,28 @@ extension VideoFrameAnalyzeViewController: MetalViewControllerDelegate {
 extension VideoFrameAnalyzeViewController: NALUnitDelegate {
     func nalUnitInfo(_ nal_buf_data: UnsafeMutablePointer<UInt8>, nalUnitSize nal_buf_size: Int32) {
 //        let vFrameData: UnsafeMutablePointer<UInt64> = UnsafeMutablePointer<UInt64>.allocate(capacity: Int(nal_buf_size));
-        FFMpegUtil.convertMp4(toAnnexB: nal_buf_data)
-        NSLog("nal buf size %d", Int(nal_buf_size))
+//        FFMpegUtil.convertMp4(toAnnexB: nal_buf_data)
+//        NSLog("nal buf size %d", Int(nal_buf_size))
+    }
+}
+
+extension VideoFrameAnalyzeViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return videoFrameDataArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = vfTableView.dequeueReusableCell(withIdentifier: "VFTableViewCell", for: indexPath) as! VFTableViewCell
+        
+        let row = indexPath.row
+        cell.mediaFrameType.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+        cell.mediaFrameType.text = videoFrameDataArray[row]
+        
+        return cell
     }
 }
