@@ -10,6 +10,9 @@
 
 @implementation FFMpegUtil
 
+/*
+ TODO: It is not working now
+ */
 + (void)convertMp4ToAnnexB:(uint8_t*)nal_buf {
     FFDemuxer demuxer = [FFMpegDemuxerWrapper getFFDemuxer];
     
