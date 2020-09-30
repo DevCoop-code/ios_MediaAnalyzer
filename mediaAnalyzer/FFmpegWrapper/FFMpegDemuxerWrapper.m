@@ -99,8 +99,9 @@
     return codecpar;
 }
 
-- (int)get_video_packet:(NAL_UNIT*)nalu {
+- (int)get_video_packet:(NAL_UNIT*)nalu frameType:(void*)fType{
     int got_video_frame = 0;
+    int* frameType = (int*)fType;
     while (av_read_frame(demuxer.fmt_ctx, &(demuxer.pkt)) >= 0) {
         if (demuxer.pkt.stream_index != demuxer.video_stream_index) {
             continue;
@@ -144,12 +145,15 @@
             case 0x6:
             case 0x65:
                 printf("I Frame \n");
+                *frameType = 0;
                 break;
             case 0x41:
                 printf("P Frame \n");
+                *frameType = 1;
                 break;
             case 0x1:
                 printf("B Frame \n");
+                *frameType = 2;
                 break;
             default:
                 printf("Not Video Frame[%x] \n", (nalu->nal_buf)[4]);

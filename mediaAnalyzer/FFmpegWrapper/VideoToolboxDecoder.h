@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic) id<NALUnitDelegate> delegate;
 
 - (int)initWithExtradata:(FFMpegDemuxerWrapper*)demuxerWrapper;
-- (int)decodeVideo: (CVPixelBufferRef*)pixelBuffer;
+- (int)decodeVideo: (CVPixelBufferRef*)pixelBuffer frameType:(void *)fType;
 - (void)releaseVideoToolboxDecoder;
 
 @end

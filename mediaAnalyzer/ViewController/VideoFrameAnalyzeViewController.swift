@@ -92,10 +92,13 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
     func runVideoToolboxDecoder() -> Int {
        
         while (true) {
-            var pixelBufferRef: UnsafeMutablePointer<Unmanaged<CVPixelBuffer>?>? = UnsafeMutablePointer<Unmanaged<CVPixelBuffer>?>.allocate(capacity: 1)
-            var vframeData: FrameData? = FrameData(pixelBufferRef)
+            var pixelBufferRef: UnsafeMutablePointer<Unmanaged<CVPixelBuffer>?>? =
+                UnsafeMutablePointer<Unmanaged<CVPixelBuffer>?>.allocate(capacity: 1)
+            var frameExtraInfo: UnsafeMutablePointer<Int>? =
+                UnsafeMutablePointer<Int>.allocate(capacity: 1)
+            frameExtraInfo?.initialize(to: 0)
             
-            if let err = videoToolboxDecoder?.decodeVideo(pixelBufferRef) {
+            if let err = videoToolboxDecoder?.decodeVideo(pixelBufferRef, frameType: frameExtraInfo!) {
                 if (err < 0) {
                     break;
                 }
@@ -114,9 +117,13 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
                 }
                 pixelBufferRef?.deallocate()
             }
-            if let videoFrameData:FrameData = vframeData {
-                videoFrameDataArray.append(videoFrameData)
+            if let frameType: Int = frameExtraInfo?[0] {
+                let vframeData: FrameData? = FrameData(0, FrameType(rawValue: frameType))
+                if let videoFrameData:FrameData = vframeData {
+                    videoFrameDataArray.append(videoFrameData)
+                }
             }
+            frameExtraInfo?.deallocate()
             
             DispatchQueue.main.async {
                 self.vfTableView.reloadData()
@@ -166,9 +173,24 @@ extension VideoFrameAnalyzeViewController: UITableViewDataSource, UITableViewDel
         
         let row = indexPath.row
         cell.mediaFrameType.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-//        cell.mediaFrameType.text = videoFrameDataArray[row]
-        cell.mediaFrameType.text = "Test"
-        
+        if let videoFrameType = videoFrameDataArray[row].frameType {
+            var vFrameText: String = "Not Recognized"
+            switch videoFrameType {
+            case .I_Frame:
+                vFrameText = "I Frame"
+                break;
+            case .P_Frame:
+                vFrameText = "P Frame"
+                break;
+            case .B_Frame:
+                vFrameText = "B Frame"
+                break
+            default:
+                vFrameText = "Not Video Frame"
+                break
+            }
+            cell.mediaFrameType.text = vFrameText
+        }
         return cell
     }
 }

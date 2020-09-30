@@ -34,7 +34,7 @@ typedef struct NAL_UNIT {
 
 - (AVCodecParameters*)getCodecParameters;
 
-- (int) get_video_packet:(NAL_UNIT*) nalu;
+- (int) get_video_packet:(NAL_UNIT*) nalu frameType:(void*)fType;
 
 - (void) ffmpeg_demuxer_release;
 

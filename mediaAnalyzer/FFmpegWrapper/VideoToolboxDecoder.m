@@ -170,11 +170,11 @@ static void didDecompress(void* decompressionOutputRefCon,
 }
 
 # pragma mark - Decode the frame data
-- (int)decodeVideo:(CVPixelBufferRef *)pixelBuffer {
+- (int)decodeVideo:(CVPixelBufferRef *)pixelBuffer frameType:(void *)fType{
     int err = 0;
     NAL_UNIT nal_unit = {NULL, 0};
     if (ffDemuxerWrapper != nil) {
-        err = [ffDemuxerWrapper get_video_packet:&nal_unit];
+        err = [ffDemuxerWrapper get_video_packet:&nal_unit frameType:fType];
         
         if (err < 0) {
             return err;
