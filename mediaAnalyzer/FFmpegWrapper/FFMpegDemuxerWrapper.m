@@ -135,11 +135,26 @@
         nalu->nal_buf = demuxer.pkt.data;
         
         // Print the Not Decoded (h264, or other codec type) bitstream
-//        NSLog(@"NAL Size : %d, %x", nalu->nal_size, nalu->nal_size);
+        NSLog(@"NAL Size : %d, %x", nalu->nal_size, nalu->nal_size);
 //        printf("NOT Decoded Data--> \n");
-//        for (int i = 0; i < nalu->nal_size; i++) {
-//            printf("[%x] ", (nalu->nal_buf)[i]);
-//        }
+        for (int i = 0; i < /*nalu->nal_size*/5; i++) {
+            printf("[%x] ", (nalu->nal_buf)[i]);
+        }
+        switch ((nalu->nal_buf)[4]) {
+            case 0x6:
+            case 0x65:
+                printf("I Frame \n");
+                break;
+            case 0x41:
+                printf("P Frame \n");
+                break;
+            case 0x1:
+                printf("B Frame \n");
+                break;
+            default:
+                printf("Not Video Frame[%x] \n", (nalu->nal_buf)[4]);
+                break;
+        }
         break;
     }
     
