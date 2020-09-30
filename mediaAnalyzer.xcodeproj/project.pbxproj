@@ -23,6 +23,8 @@
 		787437CE2500B56C00C263AF /* Vertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 787437CD2500B56C00C263AF /* Vertex.m */; };
 		78783EF5250E7F37002C574E /* FFMpegUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78783EF4250E7F37002C574E /* FFMpegUtil.m */; };
 		78A730AB24EFEEA40051E9B7 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 78A730AA24EFEEA40051E9B7 /* Shaders.metal */; };
+		78B1ED2B2524AE66004FFBEA /* FrameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1ED2A2524AE66004FFBEA /* FrameData.swift */; };
+		78B1ED2D2524AF4D004FFBEA /* mediaTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1ED2C2524AF4D004FFBEA /* mediaTypes.swift */; };
 		78E083B324DA6A0700A221B2 /* SMListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E083B224DA6A0700A221B2 /* SMListTableViewController.swift */; };
 		78E083B524DA6A2500A221B2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E083B424DA6A2500A221B2 /* SettingViewController.swift */; };
 		78F897CF250795F500ADFFE2 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7813F06A24DD14CD00190587 /* VideoToolbox.framework */; };
@@ -76,6 +78,8 @@
 		78783EF3250E7F37002C574E /* FFMpegUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMpegUtil.h; sourceTree = "<group>"; };
 		78783EF4250E7F37002C574E /* FFMpegUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMpegUtil.m; sourceTree = "<group>"; };
 		78A730AA24EFEEA40051E9B7 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		78B1ED2A2524AE66004FFBEA /* FrameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameData.swift; sourceTree = "<group>"; };
+		78B1ED2C2524AF4D004FFBEA /* mediaTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mediaTypes.swift; sourceTree = "<group>"; };
 		78E083B224DA6A0700A221B2 /* SMListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMListTableViewController.swift; sourceTree = "<group>"; };
 		78E083B424DA6A2500A221B2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		78F897D7250799AA00ADFFE2 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
@@ -307,6 +311,15 @@
 			path = Shaders;
 			sourceTree = "<group>";
 		};
+		78B1ED292524AE40004FFBEA /* MediaUtils */ = {
+			isa = PBXGroup;
+			children = (
+				78B1ED2A2524AE66004FFBEA /* FrameData.swift */,
+				78B1ED2C2524AF4D004FFBEA /* mediaTypes.swift */,
+			);
+			path = MediaUtils;
+			sourceTree = "<group>";
+		};
 		78FCEBF924D6418200CE052D = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +342,7 @@
 		78FCEC0424D6418200CE052D /* mediaAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
+				78B1ED292524AE40004FFBEA /* MediaUtils */,
 				787437CC25009DBB00C263AF /* CustomViewRendering */,
 				78A730A924EFEE4E0051E9B7 /* Shaders */,
 				78FCECD424DA62CC00CE052D /* View */,
@@ -675,9 +689,11 @@
 				78FCEC1A24D69BC800CE052D /* DrawVideoViewController.swift in Sources */,
 				78E083B324DA6A0700A221B2 /* SMListTableViewController.swift in Sources */,
 				784EB777250309E9009C749E /* SquarePlain.m in Sources */,
+				78B1ED2D2524AF4D004FFBEA /* mediaTypes.swift in Sources */,
 				78E083B524DA6A2500A221B2 /* SettingViewController.swift in Sources */,
 				78FCECD624DA634100CE052D /* LMTableViewCell.swift in Sources */,
 				7813F07C24DD4A2F00190587 /* VideoToolboxDecoder.m in Sources */,
+				78B1ED2B2524AE66004FFBEA /* FrameData.swift in Sources */,
 				784EB771250213CC009C749E /* BufferProvider.m in Sources */,
 				787437CE2500B56C00C263AF /* Vertex.m in Sources */,
 				7849C0DE250C36FF0018F760 /* FFMpegRemuxerWrapper.m in Sources */,

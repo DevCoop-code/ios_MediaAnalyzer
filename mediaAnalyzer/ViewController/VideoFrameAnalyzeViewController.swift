@@ -9,6 +9,7 @@
 import UIKit
 import MetalKit
 import Metal
+import Foundation
 
 class VideoFrameAnalyzeViewController: DrawVideoViewController {
 
@@ -24,8 +25,8 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
     var videoToolboxDecoder: VideoToolboxDecoder?
     
     var objectToDraw: SquarePlain?
-    
-    var videoFrameDataArray = [String]()
+
+    var videoFrameDataArray: Array<FrameData> = [FrameData]()
     
     override func viewDidLoad() {
         
@@ -33,6 +34,10 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
         super.mediaContentPath = mediaPath
         
         super.viewDidLoad()
+        
+        // Set tableview delegate
+        vfTableView.delegate = self
+        vfTableView.dataSource = self
 
         demuxerWrapper = FFMpegDemuxerWrapper()
         remuxerWrapper = FFMpegRemuxerWrapper()
@@ -87,7 +92,8 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
     func runVideoToolboxDecoder() -> Int {
        
         while (true) {
-            let pixelBufferRef: UnsafeMutablePointer<Unmanaged<CVPixelBuffer>?>? = UnsafeMutablePointer<Unmanaged<CVPixelBuffer>?>.allocate(capacity: 1)
+            var pixelBufferRef: UnsafeMutablePointer<Unmanaged<CVPixelBuffer>?>? = UnsafeMutablePointer<Unmanaged<CVPixelBuffer>?>.allocate(capacity: 1)
+            var vframeData: FrameData? = FrameData(pixelBufferRef)
             
             if let err = videoToolboxDecoder?.decodeVideo(pixelBufferRef) {
                 if (err < 0) {
@@ -108,6 +114,14 @@ class VideoFrameAnalyzeViewController: DrawVideoViewController {
                 }
                 pixelBufferRef?.deallocate()
             }
+            if let videoFrameData:FrameData = vframeData {
+                videoFrameDataArray.append(videoFrameData)
+            }
+            
+            DispatchQueue.main.async {
+                self.vfTableView.reloadData()
+            }
+            
             Thread.sleep(forTimeInterval: 0.025)
         }
         return 0
@@ -152,7 +166,8 @@ extension VideoFrameAnalyzeViewController: UITableViewDataSource, UITableViewDel
         
         let row = indexPath.row
         cell.mediaFrameType.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-        cell.mediaFrameType.text = videoFrameDataArray[row]
+//        cell.mediaFrameType.text = videoFrameDataArray[row]
+        cell.mediaFrameType.text = "Test"
         
         return cell
     }
